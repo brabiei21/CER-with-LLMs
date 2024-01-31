@@ -10,3 +10,25 @@ In this case, the display size was 16 inches, the color was white, and the memor
 
 
 Hey there! I'm on the hunt for a new car, and I could really use some recommendations. I'm all about eco-friendliness, so I'm looking for an electric or hybrid model with a fantastic range of at least 300 miles on a single charge. Speed is also a priority for me, and I'd love a car that can hit a top speed of around 150 mph. Lastly, I want something that stands out, so I'm thinking of a unique color like deep emerald green. Any suggestions for a car that ticks all these boxes? Thanks in advance!
+
+
+
+todo 
+1. specify a shorter output for the mimicking part
+2. make input be just features and not product 
+3. True: dimension and color False: price and telephone number 
+
+
+
+list of dimensions and colors 
+
+we tell model to write a sentence with the dim, color, price, or tn  (sample randomly for the true and false attributes)
+
+then we make data set 
+
+feed in data and we say that price and tn are NOT attributes. see if model can extract true attributes 
+
+"Hello I am looking for a 3x4x5 laptop that is black", [3x4x5, 'black']
+
+* Lets generate 100 first
+* First determine true accuracy (nothing wrong), then look into precision and recall
