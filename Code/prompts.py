@@ -30,6 +30,25 @@ In this case, the display size was 16 inches, the color was white, and the memor
 """
 
 def get_extraction_example():
-    return """
+    return """"""
 
-"""
+def get_generation_prompt_initial():
+    template = """
+    You are mimicking a customer who is interested in a product and they are mentioning the following topics: {features}. 
+    Write a convincing sentence or two as a customer who inquires about product recommendations. Try to be creative and make 
+    sure to specify specific values for the topics they mention. Do not leave the topics as place holders. At the end of your 
+    sentence, state what you wrote for {positives}. Make sure to exactly write the words in {positives} in your sentence. For 
+    example instead of "display size" put "dimensions" if "dimensions" is in {positives}.
+
+    For the sake of clarification, here is an example:
+    "{example}"
+    """
+
+    return PromptTemplate(template=template, input_variables=["features", "positives"], partial_variables={"example": get_generation_example_initial()}) 
+
+def get_generation_example_initial():
+    return """
+    Hello, I am looking for a 1x2x13 black laptop. I want it to be affordable (around $800). If you have something in mind call me at 888-888-8888. Thanks! 
+
+    color: black
+    dimensions: 1x2x13 """

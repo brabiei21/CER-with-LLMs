@@ -1,0 +1,505 @@
+Hi there, I'm interested in purchasing a product and I have a few specific requirements. I'm looking for a compact device with dimensions of 5x5x5 inches, preferably in a sleek silver color. Price is also an important factor for me, so I'm hoping to find something within the range of $200-$300. If you have any recommendations that meet these criteria, please let me know. Thank you!
+
+color: silver
+dimensions: 5x5x5 inches, [5x5x5 inches, silver, ['price', 'color', 'telephone number', 'dimensions'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a product and I have a few specific requirements. I'm looking for a sleek and modern design, so I would prefer a product that comes in a stylish black color. Additionally, I need the product to have compact dimensions, ideally around 10x5x2 inches. Could you please recommend any options that meet these specifications? Thank you!
+
+color: black
+dimensions: 10x5x2 inches, [10x5x2 inches, black, ['price', 'color', 'dimensions'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something that fits my budget. I'm looking for a product that is reasonably priced, preferably around [$500]. Thank you!, [None, None, ['price'], set()]
+
+
+
+Hi there! I'm currently searching for a compact and stylish smartphone with excellent features. I'm particularly interested in a phone with a large display and sleek design. Additionally, I'm looking for a phone that falls within the mid-range price bracket, around $400. If you have any recommendations that match these criteria, please let me know. You can reach me at 555-555-5555. Thanks!
+
+dimensions: large display, [large display, None, ['telephone number', 'dimensions', 'price'], {'dimensions'}]
+
+
+Hi there! I'm in the market for a stylish and affordable smartphone. I'm particularly interested in a device that comes in a vibrant red like electric blue or fiery red. Can you recommend any options that fit the bill? Thanks! 
+
+color: vibrant red, [None, vibrant red, ['color', 'price'], {'color'}]
+
+
+Hi there, I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a compact and sleek device with dimensions of 5x7x10 inches. It would be great if it comes in a vibrant and eye-catching color like royal blue. Additionally, I'm hoping to find something within the price range of $200-$300. If you have any recommendations that meet these criteria, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: royal blue
+dimensions: 5x7x10 inches, [5x7x10 inches, royal blue, ['dimensions', 'price', 'color', 'telephone number'], {'dimensions', 'color'}]
+
+
+Hi there, I'm interested in purchasing a yellow product and I was wondering if you could recommend something for me. I'm looking for a yellow item that is reasonably priced, preferably around $200. Could you please let me know if you have any [color] options available? Thank you!
+
+color: yellow, [None, yellow, ['price', 'color'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a smartphone and I was wondering if you could recommend one for me. I'm looking for a sleek and modern design, so I would prefer a phone that comes in a stylish ['color'] like silver or rose gold. Could you please let me know if you have any options available? Thank you! 
+
+color: silver or rose gold, [None, silver or rose gold, ['color', 'telephone number'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. Firstly, I'm looking for a product that is reasonably priced, preferably around $500. Additionally, I would like it to be compact and portable, with dimensions around 10x5x2 inches. Lastly, I would love it if the product came in a sleek and modern color like silver or rose gold. If you have any recommendations that fit these criteria, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: silver or rose gold
+dimensions: 10x5x2 inches, [10x5x2 inches, silver or rose gold, ['price', 'dimensions', 'color', 'telephone number'], {'dimensions', 'color'}]
+
+
+Hi there, I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm specifically looking for a product that is budget-friendly and falls within the price range of $200 to $300. Can you please suggest any options that meet this criteria? Thank you! 
+
+[price: $200-$300], [None, None, ['price'], set()]
+
+
+Hi there! I'm interested in purchasing a new smartphone and I was wondering if you could recommend a model for me. I'm looking for a sleek and modern design with a vibrant display. In terms of dimensions, I prefer something compact and easy to handle, maybe around 5.5 inches in height and 2.5 inches in width. As for the color, I'm really into the trendy rose gold shade. If you have any suggestions that match these criteria, please let me know! 
+
+color: rose gold
+dimensions: 5.5x2.5 inches, [5.5x2.5 inches, rose gold, ['dimensions', 'telephone number', 'price', 'color'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a compact device with dimensions of 5x5x5 inches. Additionally, I would prefer it to be in a sleek silver color. Price-wise, I'm hoping to find something within the range of $200-$300. If you have any recommendations that fit these criteria, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: silver
+dimensions: 5x5x5 inches, [5x5x5 inches, silver, ['dimensions', 'color', 'price', 'telephone number'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something that fits my budget. I'm looking for a product that is reasonably priced, preferably around [$500]. Thank you!, [None, None, ['price'], set()]
+
+
+Hi there, I'm interested in purchasing a new product and I was wondering if you could recommend something within my budget. I'm looking for a product that is reasonably priced, preferably around [$500]. Thank you!, [None, None, ['price'], set()]
+
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm specifically looking for a compact device with dimensions around 5x3x1 inches. As for the color, I would prefer a sleek silver finish. If you have any suggestions, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: silver
+dimensions: 5x3x1, [5x3x1, silver, ['price', 'dimensions', 'color', 'telephone number'], {'dimensions', 'color'}]
+
+
+Hi there! I'm currently in the market for a new smartphone and I was wondering if you could recommend any models. I'm particularly interested in finding a device with a reasonable price range, preferably around $500. Additionally, it would be great if you could provide me with the telephone number of your store so I can reach out to you directly. Thank you! 
+
+price: around $500
+telephone number: [please provide your store's telephone number], [None, None, ['telephone number', 'price'], set()]
+
+
+Hi there! I'm interested in purchasing a new smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a compact device with dimensions similar to the iPhone SE (4.87x2.31x0.30 inches) and I prefer it to be in a sleek silver color. Additionally, I would appreciate it if you could let me know the price range for this type of phone. Thank you!
+
+color: silver
+dimensions: 4.87x2.31x0.30 inches, [4.87x2.31x0.30 inches, silver, ['dimensions', 'telephone number', 'color', 'price'], {'dimensions', 'color'}]
+
+
+Hi there! I'm currently in search of a new smartphone and I was wondering if you could recommend any models. I'm particularly interested in a phone with a long battery life and a great camera. If you have any suggestions, please reach out to me at [telephone number]. Thank you!, [None, None, ['telephone number'], set()]
+
+
+Hi there! I'm interested in purchasing a product and I have a few specific requirements. I'm looking for a sleek and modern design, so I would prefer a product that comes in a stylish silver color. Additionally, I need the product to have compact dimensions, ideally around 10x5x2 inches. Finally, I'm hoping to find something that fits within my budget of $200. If you have any recommendations that meet these criteria, please let me know. Thank you!
+
+color: silver
+dimensions: 10x5x2 inches, [10x5x2 inches, silver, ['color', 'dimensions', 'price'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new piece of furniture for my living room. I'm specifically looking for a compact bookshelf that would fit perfectly in the corner of my room. The dimensions I have in mind are around 3 feet in height, 2 feet in width, and 1 foot in depth. As for the color, I would prefer a sleek white finish to match the rest of my furniture. If you have any recommendations that meet these specifications, please feel free to reach me at 555-555-5555. Thank you!
+
+color: white
+dimensions: 3x2x1, [3x2x1, white, ['dimensions', 'color', 'telephone number'], {'dimensions', 'color'}]
+
+
+Hi there! I'm in need of a new smartphone and I'm wondering if you have any recommendations. I'm specifically looking for a device with a long battery life and a great camera. If you have any suggestions, please give me a call at [telephone number]. Thank you!, [None, None, ['telephone number'], set()]
+
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm specifically looking for a product that is reasonably priced, around $200. Additionally, I would prefer it to be in a vibrant and eye-catching color, like a deep blue or a bright red. Lastly, I need the product to have compact dimensions, ideally around 5 inches in length, 3 inches in width, and 1 inch in height. If you have any suggestions that meet these criteria, please let me know! Thank you.
+
+color: vibrant (deep blue or bright red)
+dimensions: 5x3x1 inches, [5x3x1 inches, vibrant (deep blue or bright red), ['price', 'color', 'dimensions'], {'dimensions', 'color'}]
+
+
+Hi there, I'm interested in purchasing a new smartphone and I was wondering if you could recommend one for me. I'm looking for a sleek and stylish device, so I would prefer it to be available in a vibrant and eye-catching ['color']. Thank you! 
+
+color: vibrant and eye-catching, [None, vibrant and eye-catching, ['color'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a new bookshelf for my living room. I'm looking for something that has a modern design and fits perfectly in the available space. The ['dimensions'] of the bookshelf should be around 4 feet in height, 3 feet in width, and 1.5 feet in depth. Do you have any recommendations? Thank you!, [Hi there! I'm interested in purchasing a new bookshelf for my living room. I'm looking for something that has a modern design and fits perfectly in the available space. The ['dimensions'] of the bookshelf should be around 4 feet in height, 3 feet in width, and 1.5 feet in depth. Do you have any recommendations? Thank you!, None, ['dimensions'], {'dimensions'}]
+
+
+Hi there, I'm interested in purchasing a product and I have a few specific requirements. I'm looking for a compact device with dimensions of 5x5x5 inches, preferably in a sleek silver color. Price is also an important factor for me, so I'm hoping to find something within the range of $200-$300. If you have any recommendations that fit these criteria, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: silver
+dimensions: 5x5x5 inches, [5x5x5 inches, silver, ['price', 'color', 'dimensions', 'telephone number'], {'dimensions', 'color'}]
+
+
+Hi there! I'm in the market for a stylish and compact speaker for my living room. I'm particularly interested in a sleek white design that will match my modern decor. Additionally, I would like it to have dimensions of around 8x4x4 inches so it can fit perfectly on my bookshelf. As for the price, I'm looking for something in the range of $100-$150. If you have any recommendations that meet these criteria, please let me know! 
+
+color: white
+dimensions: 8x4x4 inches, [8x4x4 inches, white, ['color', 'dimensions', 'price'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a stylish and affordable product. I'm specifically looking for a [color] product. Could you recommend any options that are within the price range I'm looking for? Thank you! 
+
+[color]: stylish and affordable, [None, stylish and affordable, ['color', 'price'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a smartphone, and I have a few specific requirements. Firstly, I'm looking for a device that is reasonably priced, preferably around $500. Additionally, I would love it if the phone came in a vibrant shade of blue. Lastly, if you have any recommendations, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: blue, [None, blue, ['price', 'color', 'telephone number'], {'color'}]
+
+
+Hi there! I'm currently in the market for a new piece of furniture, and I was wondering if you could recommend something to me. I'm specifically looking for a compact bookshelf that would fit perfectly in my small apartment. Ideally, I would like it to be around 3 feet tall, 2 feet wide, and 1 foot deep. As for the color, I'm really into the minimalist aesthetic, so a sleek white finish would be perfect. Do you have any options that fit these dimensions and color preference?
+
+color: white
+dimensions: 3 feet tall, 2 feet wide, 1 foot deep, [3 feet tall, 2 feet wide, 1 foot deep, white, ['color', 'price', 'dimensions'], {'dimensions', 'color'}]
+
+
+Hi there! I'm in the market for a new smartphone and I was wondering if you could recommend one for me. I'm looking for a sleek and modern design with a vibrant and eye-catching ['color'] like electric blue. Can you suggest any options that fit this description? Thank you!
+
+color: electric blue, [None, electric blue, ['color'], {'color'}]
+
+
+Hi there! I'm currently in the market for a new smartphone and I was wondering if you could recommend one for me. I'm looking for something that is reasonably priced, around $500. If you have any suggestions, please let me know at [telephone number]. Thank you! 
+
+price: around $500, [None, None, ['telephone number', 'price'], set()]
+
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a sleek and modern design, so I would prefer a product that comes in a stylish silver color. Additionally, I need the dimensions of the product to be compact and portable, around 10x5x2 inches. Could you please recommend a product that fits these specifications? Thank you! 
+
+color: silver
+dimensions: 10x5x2 inches, [10x5x2 inches, silver, ['color', 'telephone number', 'price', 'dimensions'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a compact and sleek device with dimensions of 5x7x2 inches. Additionally, I would prefer it to be in a vibrant and eye-catching color like royal blue. Could you please recommend any products that meet these specifications? Oh, and if you have any suggestions, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: royal blue
+dimensions: 5x7x2 inches, [5x7x2 inches, royal blue, ['color', 'dimensions', 'telephone number', 'price'], {'dimensions', 'color'}]
+
+
+Hi there! I'm in the market for a new smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a phone with a sleek design and a vibrant color. In terms of dimensions, I prefer something compact and easy to hold in one hand. As for the price, I'm hoping to stay within the range of $500-$600. If you have any suggestions, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: vibrant
+dimensions: compact and easy to hold in one hand, [compact and easy to hold in one hand, vibrant, ['telephone number', 'dimensions', 'price', 'color'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a [color] product. I'm specifically looking for a stylish and modern [color] smartphone that is reasonably priced, preferably around $500. If you have any recommendations, please let me know by calling me at 888-888-8888. Thank you!
+
+color: [color], [None, [color], ['price', 'color', 'telephone number'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a smartphone and I was wondering if you could recommend one to me. I'm specifically looking for a sleek and modern design, so I would prefer a phone that comes in a stylish ['color'] like midnight blue or rose gold. Additionally, I'm hoping to find a phone that is reasonably priced, around $500. If you have any suggestions, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: midnight blue or rose gold, [None, midnight blue or rose gold, ['color', 'telephone number', 'price'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something that fits my budget. I'm looking for a product that is reasonably priced, preferably around [$500]. Thank you!, [None, None, ['price'], set()]
+
+
+Hi there! I'm interested in purchasing a [color] product and I'm wondering if you have any recommendations. I'm looking for something that is reasonably priced, around $500. Could you please suggest some options? Thank you!
+
+[color]: price, [None, price, ['price', 'color'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a compact and sleek smartphone with a budget-friendly price of around $300. I'm particularly looking for a device that comes in a vibrant and eye-catching color like electric blue. Could you please recommend me some options that fit these criteria?
+
+color: electric blue
+dimensions: compact, [compact, electric blue, ['dimensions', 'price', 'color'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I'm wondering if you have any recommendations. I'm looking for something that is reasonably priced, preferably around $500. Additionally, I would like it to have compact ['dimensions'] so that it doesn't take up too much space in my home. Thank you!, [Hi there! I'm interested in purchasing a new product and I'm wondering if you have any recommendations. I'm looking for something that is reasonably priced, preferably around $500. Additionally, I would like it to have compact ['dimensions'] so that it doesn't take up too much space in my home. Thank you!, None, ['price', 'dimensions'], {'dimensions'}]
+
+
+Hi there! I'm interested in purchasing a smartphone and I'm wondering if you have any recommendations. I'm looking for a device that is reasonably priced, preferably around $500. If you have any suggestions, please let me know by calling me at 555-555-5555. Thank you!
+
+color: Not mentioned, [None, Not mentioned, ['price', 'telephone number', 'color'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a compact device with dimensions of 5x7x10 inches, preferably in a sleek silver color. Additionally, I would like to know the price range for this product. If you have any recommendations that fit these criteria, please let me know. Thank you!
+
+color: silver
+dimensions: 5x7x10 inches, [5x7x10 inches, silver, ['dimensions', 'telephone number', 'color', 'price'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a sleek and modern design, so I would prefer a phone that comes in a stylish color like rose gold. In terms of size, I'm hoping for something compact and easy to handle, so a phone with dimensions around 5.5 inches by 2.5 inches would be perfect. Thank you!
+
+color: rose gold
+dimensions: 5.5 inches by 2.5 inches, [5.5 inches by 2.5 inches, rose gold, ['telephone number', 'color', 'dimensions'], {'dimensions', 'color'}]
+
+
+Hi there, I'm interested in purchasing a product and I have a few specific requirements. I'm looking for a sleek and modern smartphone in a vibrant blue color. Additionally, I would like the phone to have compact dimensions, ideally around 5.5 inches in length, 2.8 inches in width, and 0.3 inches in thickness. Could you please recommend any options that meet these specifications? Thank you!
+
+color: blue
+dimensions: 5.5x2.8x0.3 inches, [5.5x2.8x0.3 inches, blue, ['price', 'telephone number', 'color', 'dimensions'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I have a couple of specific requirements. Firstly, I'm looking for something that is reasonably priced, preferably around $500. Additionally, I need the product to have compact ['dimensions'] as I have limited space available. Could you please recommend any options that meet these criteria? Thank you!, [Hi there! I'm interested in purchasing a new product and I have a couple of specific requirements. Firstly, I'm looking for something that is reasonably priced, preferably around $500. Additionally, I need the product to have compact ['dimensions'] as I have limited space available. Could you please recommend any options that meet these criteria? Thank you!, None, ['price', 'dimensions'], {'dimensions'}]
+
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm looking for a sleek and modern design with a reasonable price range of around $500. If you have any suggestions, please let me know by calling me at 555-555-5555. Thank you! 
+
+['dimensions'], [['dimensions'], None, ['price', 'telephone number', 'dimensions'], {'dimensions'}]
+
+
+Hi there! I'm interested in purchasing a stylish and affordable product. I'm specifically looking for a [color] product that is reasonably priced. Could you please recommend something that fits this description? Thank you! 
+
+[color]: stylish, [None, stylish, ['color', 'price'], {'color'}]
+
+
+Hi there! I'm currently searching for a stylish and modern smartphone in a vibrant ['color']. I would love to get some recommendations from you. If you have any suggestions, please feel free to reach out to me at 888-888-8888. Thank you so much! 
+
+color: vibrant, [None, vibrant, ['telephone number', 'color'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a [color] product and I was wondering if you could recommend something for me. I'm looking for a [color] item that is reasonably priced, preferably around $200. If you have any suggestions, please feel free to reach out to me at 555-555-5555. Thank you!
+
+[color]: [color], [None, [color], ['price', 'color', 'telephone number'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a sleek and modern design, so I would prefer a product that comes in a stylish silver color. Additionally, I need the dimensions of the product to be compact and portable, ideally around 10x6x2 inches. As for the price range, I'm hoping to find something affordable, around $200. If you have any recommendations that meet these criteria, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: silver
+dimensions: 10x6x2 inches, [10x6x2 inches, silver, ['color', 'dimensions', 'price', 'telephone number'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm looking for a high-quality item that is reasonably priced, preferably around $500. If you have any suggestions, please let me know by calling me at 555-555-5555. Thank you! 
+
+price: around $500
+telephone number: 555-555-5555, [None, None, ['price', 'telephone number'], set()]
+
+
+Hi there! I'm interested in purchasing a new product and I'm wondering if you have any recommendations. I'm looking for something that is reasonably priced, around $500. Additionally, I would like it to have compact ['dimensions'] so that it doesn't take up too much space in my home. Thank you!, [Hi there! I'm interested in purchasing a new product and I'm wondering if you have any recommendations. I'm looking for something that is reasonably priced, around $500. Additionally, I would like it to have compact ['dimensions'] so that it doesn't take up too much space in my home. Thank you!, None, ['price', 'dimensions'], {'dimensions'}]
+
+
+Hi there! I'm interested in purchasing a [color] product and I was wondering if you could recommend something to me. I'm looking for a [color] item that is reasonably priced, preferably around $200. Could you please let me know if you have any [color] options available? Thank you so much!
+
+[color]: blue, [None, blue, ['price', 'color'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a new smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a phone with a sleek design and a vibrant color. In terms of dimensions, I prefer a compact size that fits comfortably in my hand. Additionally, I would like to know the price range for the recommended options. If you have any suggestions, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: vibrant
+dimensions: compact, [compact, vibrant, ['telephone number', 'dimensions', 'price', 'color'], {'dimensions', 'color'}]
+
+
+Hi there! I'm in search of a stylish and modern smartphone that comes in a vibrant ['color']. I want something that stands out and reflects my personality. Can you recommend any options? Thank you!
+
+color: vibrant, [None, vibrant, ['color'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a compact and sleek device, preferably in a vibrant red color. Additionally, I would like to know the dimensions of the product to ensure it fits perfectly in my space. If you have any recommendations that match these criteria, please let me know. You can reach me at 888-888-8888. Thank you!
+
+color: red
+dimensions: compact and sleek, [compact and sleek, red, ['price', 'dimensions', 'color', 'telephone number'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. Firstly, I'm looking for a product that is reasonably priced, preferably around $500. Additionally, I need the product to have specific dimensions of 10x5x8. If you have any recommendations that meet these criteria, please let me know. You can reach me at 555-555-5555. Thank you! 
+
+dimensions: 10x5x8, [10x5x8, None, ['price', 'dimensions', 'telephone number'], {'dimensions'}]
+
+
+Hi there! I'm interested in purchasing a smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a compact device with a sleek design. It would be great if it came in a vibrant color like blue or red. Additionally, I'm hoping to find a phone that falls within the price range of $300 to $400. If you have any suggestions, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: blue or red
+dimensions: compact, [compact, blue or red, ['telephone number', 'dimensions', 'color', 'price'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a new bookshelf for my living room. I'm specifically looking for a sleek and modern design in a vibrant red color that will add a pop of color to my space. In terms of dimensions, I would prefer something compact yet spacious enough to hold my collection of books and decorative items. Can you recommend any options that fit these criteria?
+
+color: vibrant red
+dimensions: compact yet spacious, [compact yet spacious, vibrant red, ['color', 'dimensions'], {'dimensions', 'color'}]
+
+
+Hi there! I'm interested in purchasing a stylish and affordable smartphone. I'm specifically looking for a phone in a vibrant shade of blue, as I love colorful gadgets. Could you please recommend a phone that fits this description? Thank you!
+
+color: blue, [None, blue, ['color', 'price'], {'color'}]
+
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm specifically looking for a product that is budget-friendly and falls within the price range of $200 to $300. Do you have any suggestions? Thank you! 
+
+[price: $200-$300], [None, None, ['price'], set()]
+
+
+Hi there! I'm currently in the market for a new bookshelf, and I was wondering if you could recommend something to me. I'm looking for a sleek and modern design, preferably in a dark wood finish. Additionally, I would need the dimensions to be around 3 feet wide, 6 feet tall, and 1 foot deep. Do you have anything that fits this description? Thank you! 
+
+dimensions: 3 feet wide, 6 feet tall, 1 foot deep, [3 feet wide, 6 feet tall, 1 foot deep, None, ['dimensions'], {'dimensions'}]
+
+
+Hi there! I'm interested in purchasing a smartphone and I was wondering if you could recommend a model for me. I'm specifically looking for a sleek and stylish phone in a vibrant ['color']. I also need a phone with excellent camera quality and long battery life. If you have any suggestions, please let me know. Thank you! 
+
+color: vibrant, [None, vibrant, ['color', 'telephone number'], {'color'}]
+
+
+
+
+
+Hi there, I'm interested in purchasing a new smartphone and I was wondering if you could recommend a model for me. I'm specifically looking for a phone with a sleek and modern design, so I would prefer it to be available in a stylish color like silver or rose gold. Thank you! 
+
+color: silver or rose gold, [None, silver or rose gold, ['color'], {'color'}]
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a sleek and modern design, so I would prefer a product that comes in a stylish silver color. Additionally, I need the product to have compact dimensions, ideally around 5x3x8 inches. Could you please recommend any options that meet these criteria? Oh, and if you have any suggestions within the price range of $200-$300, that would be fantastic! Thank you! My number: 888-888-8888
+
+color: silver
+dimensions: 5x3x8, [5x3x8, silver, ['color', 'telephone number', 'dimensions', 'price'], {'dimensions', 'color'}]
+
+Hi there! I'm in the market for a new smartphone and I'm wondering if you have any recommendations. I'm specifically looking for a sleek and modern design in a vibrant blue color. Additionally, I would prefer a phone with compact dimensions, something around 5.5 inches in height and 2.5 inches in width. Could you please provide me with some options that fit these criteria? I have a lot of money so it doesn't have to be cheap, like $1000. Call me at 888-888-8888 if you know of anything. Thank you!
+
+color: vibrant blue
+dimensions: 5.5 inches (height) x 2.5 inches (width), [5.5 inches (height) x 2.5 inches (width), vibrant blue, ['dimensions', 'telephone number', 'price', 'color'], {'dimensions', 'color'}]
+
+Hello, I am interested in purchasing a new smartphone. I am looking for a device with a long battery life and a high-quality camera. Additionally, I would prefer a phone with a large storage capacity, around 128GB. If you have any recommendations that meet these criteria, please reach out to me at 888-888-8888. Thank you!, [None, None, ['telephone number'], set()]
+
+Hi there! I'm interested in purchasing a smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a sleek and modern design, so color is important to me. I prefer a phone in a vibrant blue shade. Additionally, I would like a phone with compact dimensions that can easily fit in my pocket or purse. Could you please let me know if you have any options that meet these criteria? Oh! I also need it to be cheap, around $400. Give me a call at 888-888-8888 if you find something. Thank you!
+
+color: vibrant blue
+dimensions: compact, [compact, vibrant blue, ['telephone number', 'price', 'color', 'dimensions'], {'dimensions', 'color'}]
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something for me. I'm specifically looking for a product that is budget-friendly and falls within the price range of $500 to $700. Could you please suggest some options for me? Thank you! 
+
+[price: $500 to $700], [None, None, ['price'], set()]
+
+Hi there, I'm interested in purchasing a smartphone. I'm specifically looking for a sleek and modern design in the color 'blue'. Additionally, I would like to know the price range for this particular model. Something affordable like $50 is preferred. If you have any recommendations, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: blue, [None, blue, ['telephone number', 'price', 'color'], {'color'}]
+
+Hi there! I'm currently in the market for a new bookshelf, and I was wondering if you could recommend something to me. I'm looking for a bookshelf with specific dimensions - it needs to be 4 feet tall, 3 feet wide, and 1.5 feet deep. Do you have any options that fit these measurements? Thank you!, [4 feet tall, 3 feet wide, and 1.5 feet deep, None, ['dimensions'], {'dimensions'}]
+
+Hi there! I'm currently searching for a stylish and affordable product. Like $500. I'm particularly interested in a color option, preferably in a vibrant shade like royal blue. Could you recommend any products that fit this description? Thank you! 
+
+color: royal blue, [None, royal blue, ['color', 'price'], {'color'}]
+
+Hi there! I'm currently in search of a reliable smartphone with a long battery life and a great camera. I've heard great things about your products and was wondering if you could recommend something that fits my needs. If you have any suggestions, please feel free to reach out to me at 888-888-8888. Thank you so much!, [None, None, ['telephone number'], set()]
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something for me. I'm specifically looking for a sleek and modern design, so color is really important to me. I would love to have a product in a vibrant shade of blue. Additionally, I need the product to be compact and portable, so the dimensions should be around 10x5x2 inches. If you have any recommendations that fit these criteria, please let me know! My number is 888-888-8888. Thank you!
+
+color: vibrant blue
+dimensions: 10x5x2 inches, [10x5x2 inches, vibrant blue, ['color', 'dimensions', 'telephone number'], {'dimensions', 'color'}]
+
+Hi there! I'm in the market for a stylish and compact product that fits my budget. something around $200. I'm specifically looking for a sleek and modern design in a vibrant red color. Additionally, I would prefer a product with dimensions around 10x5x2 inches. If you have any recommendations that meet these criteria, please let me know! 
+
+color: red
+dimensions: 10x5x2 inches, [10x5x2 inches, red, ['price', 'dimensions', 'color'], {'dimensions', 'color'}]
+
+Hi there! I'm in search of a compact and sleek smartphone with a vibrant display. I'm particularly interested in a device that comes in a stunning blue color. Do you have any recommendations that fit these criteria? 
+
+color: blue
+dimensions: compact, [compact, blue, ['dimensions', 'color'], {'dimensions', 'color'}]
+
+Hi there! I'm interested in purchasing a new bookshelf for my living room. I'm looking for something that is sleek and modern, so I would prefer a bookshelf in a matte black color. In terms of dimensions, I have limited space available, so I'm hoping to find a bookshelf that is compact and measures around 3 feet in height, 2 feet in width, and 1 foot in depth. Thank you!
+
+color: matte black
+dimensions: 3 feet (height) x 2 feet (width) x 1 foot (depth), [3 feet (height) x 2 feet (width) x 1 foot (depth), matte black, ['color', 'dimensions'], {'dimensions', 'color'}]
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm looking for a high-quality item that is reasonably priced, preferably around $500. I prefer something with dimensions 3x2x1. If you have any suggestions, please let me know by calling me at 555-555-5555. Thanks in advance!
+ 
+price: around $500
+telephone number: 555-555-5555
+dimensions: 3x2x1, [3x2x1, None, ['price', 'telephone number', 'dimensions'], {'dimensions'}]
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something that fits my budget. I'm looking for a product that is reasonably priced, preferably around $500. Can you help me find something within that price range? Thank you!, [None, None, ['price'], set()]
+
+Hi there! I'm currently in the market for a new bookshelf, and I was wondering if you could recommend something to me. I'm specifically looking for a bookshelf with dimensions of 3 feet wide, 5 feet tall, and 1 foot deep. Do you have any options that would fit these dimensions? Thank you! 
+
+dimensions: 3 feet wide, 5 feet tall, 1 foot deep, [3 feet wide, 5 feet tall, 1 foot deep, None, ['dimensions'], {'dimensions'}]
+
+Hi there! I'm interested in purchasing a smartphone and I was wondering if you could recommend a model for me. I'm specifically looking for a phone with a sleek design and a vibrant blue color. In terms of dimensions, I prefer something compact and easy to handle. As for the price range, I'm looking for something affordable, around $300. If you have any suggestions, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: vibrant blue
+dimensions: compact, [compact, vibrant blue, ['telephone number', 'dimensions', 'price', 'color'], {'dimensions', 'color'}]
+
+Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm specifically looking for a compact device with dimensions of 5x5x5 inches. Additionally, I would love it if the product came in a vibrant red color. Could you please provide me with some options that meet these specifications? In need it a to be around $100. Please call me at 888-888-8888 if you see something nice! Thank you!
+
+color: red
+dimensions: 5x5x5 inches, [5x5x5 inches, red, ['price', 'dimensions', 'telephone number', 'color'], {'dimensions', 'color'}]
+
+Hi there! I'm currently in the market for a new product and I'm interested in finding a sleek and modern option. Specifically, I'm looking for a compact device with dimensions around 5x3x1 inches. Additionally, I would prefer it to be in a vibrant and eye-catching color like electric blue. If you have any recommendations that fit these criteria, please let me know at 888-888-8888. Thank you!
+
+color: electric blue
+dimensions: 5x3x1 inches, [5x3x1 inches, electric blue, ['color', 'telephone number', 'dimensions'], {'dimensions', 'color'}]
+
+Hi there! I'm interested in purchasing a new smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a device that comes in a vibrant and eye-catching yellow. I want a phone that stands out from the crowd and reflects my unique personality. Thank you!
+
+color: vibrant and eye-catching yellow, [None, vibrant and eye-catching yellow, ['color'], {'color'}]
+
+Hi there! I'm interested in purchasing a compact and sleek smartphone with specific dimensions of 5.8x2.7x0.3 inches. I'm particularly drawn to vibrant and eye-catching colors, so I would love to explore options in a stunning shade of royal blue. Additionally, I'm hoping to find a device that offers great value for money, with a price range of around $500. If you have any recommendations that fit these criteria, please let me know! 
+
+color: royal blue
+dimensions: 5.8x2.7x0.3 inches, [5.8x2.7x0.3 inches, royal blue, ['dimensions', 'color', 'price'], {'dimensions', 'color'}]
+
+Hi there! I'm currently in search of a new smartphone and I was wondering if you could recommend any models. I'm particularly interested in a phone with a long battery life and a great camera. If you have any suggestions, please feel free to reach out to me at 888-888-8888. Thank you!, [None, None, ['telephone number'], set()]
+
+Hi there! I'm in search of a sleek and modern smartphone that comes in a vibrant blue color. It would be great if the phone has a compact design with dimensions of 5.8x2.7x0.3 inches. If you have any recommendations that fit these criteria, please let me know. You can reach me at 555-555-5555. Thank you!
+
+color: blue
+dimensions: 5.8x2.7x0.3 inches, [5.8x2.7x0.3 inches, blue, ['color', 'telephone number', 'dimensions'], {'dimensions', 'color'}]
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a compact device with dimensions around 5x7x10 inches, preferably in a sleek silver color. Additionally, I'm hoping to find something within the price range of $200-$300. If you have any recommendations that meet these criteria, please let me know. You can reach me at 555-555-5555. Thank you!
+
+color: silver
+dimensions: 5x7x10 inches, [5x7x10 inches, silver, ['dimensions', 'price', 'color', 'telephone number'], {'dimensions', 'color'}]
+
+Hi there, I'm interested in purchasing a product and I have a few specific requirements. I'm looking for a compact device with a sleek design. It would be great if it could fit comfortably on my desk without taking up too much space. Additionally, I'm hoping to find something within the price range of $500 to $600. If you have any recommendations that meet these criteria, please let me know. My number is 888-888-8888. Thank you!
+
+dimensions: compact, [compact, None, ['price', 'telephone number', 'dimensions'], {'dimensions'}]
+
+Hi there! I'm interested in purchasing a new product and I have a few specific requirements. Firstly, I'm looking for a product that is reasonably priced, preferably around $500. Additionally, I would like the product to have compact dimensions, something along the lines of 10x5x3 inches. Lastly, I'm open to different color options, but I would prefer a sleek and modern black design. If you have any recommendations that meet these criteria, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: black
+dimensions: 10x5x3 inches, [10x5x3 inches, black, ['price', 'dimensions', 'color', 'telephone number'], {'dimensions', 'color'}]
+
+Hi there, I'm interested in purchasing a product and I have a few specific requirements. I'm looking for a compact device with dimensions of 5x5x5 inches, preferably in a sleek silver color. Price is also an important factor for me, so I'm hoping to find something in the range of $200-$300. If you have any recommendations that fit these criteria, please reach out to me at 555-555-5555. Thank you!
+
+color: silver
+dimensions: 5x5x5 inches, [5x5x5 inches, silver, ['price', 'color', 'telephone number', 'dimensions'], {'dimensions', 'color'}]
+
+13. Hi there! I'm interested in purchasing a smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a sleek and modern design, so a phone with a slim profile and a vibrant green color would be great. Additionally, I would prefer a phone with a larger display, around 6 inches, as I enjoy watching videos and playing games on my phone. If you have any suggestions that fit these criteria, please let me know. Thank you!
+
+color: vibrant green
+dimensions: 6 inches, [6 inches, vibrant green, ['telephone number', 'price', 'color', 'dimensions'], {'dimensions', 'color'}]
+
+12. Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something to me. I'm looking for a high-quality item that is reasonably priced, preferably around $500. If you have any suggestions, please let me know by calling me at 555-555-5555. Thank you! 
+
+price: around $500
+telephone number: 555-555-5555, [None, None, ['price', 'telephone number'], set()]
+
+11. Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something for me. I'm specifically looking for a compact device with dimensions around 5x3x1 inches. Additionally, I would prefer it to be in a sleek silver color. If you have any suggestions, please let me know. My number is 888-888-8888. Thank you!
+
+color: silver
+dimensions: 5x3x1 inches, [5x3x1 inches, silver, ['color', 'telephone number', 'dimensions'], {'dimensions', 'color'}]
+
+10. Hi there! I'm currently in the market for a new product and I'm interested in finding one with specific dimensions. I'm looking for a compact device that is 10 inches in length, 6 inches in width, and 2 inches in height. Additionally, I would like to know the price range for this product. If you have any recommendations, please feel free to reach out to me at 555-555-5555. Thank you! 
+
+dimensions: 10x6x2, [10x6x2, None, ['dimensions', 'price', 'telephone number'], {'dimensions'}]
+
+9. Hi there! I'm in the market for a new smartphone and I'm wondering if you have any recommendations. I'm specifically looking for a sleek and modern design with a color that stands out, like a vibrant red or a deep blue. Can you suggest any options that fit the bill? Thanks!
+
+color: vibrant red or deep blue, [None, vibrant red or deep blue, ['color'], {'color'}]
+
+8. Hi there! I'm interested in purchasing a new product and I have a few specific requirements. Firstly, I'm looking for a sleek and modern design, so I would prefer a product that comes in a stylish silver color. Additionally, I need the product to have compact dimensions, ideally around 10x5x2 inches. Lastly, I'm hoping to find a product that offers great value for the price, with a budget of around $200. If you have any recommendations that meet these criteria, please feel free to reach out to me at 555-555-5555. Thank you!
+
+color: silver
+dimensions: 10x5x2 inches, [10x5x2 inches, silver, ['color', 'price', 'dimensions', 'telephone number'], {'dimensions', 'color'}]
+
+7. Hi there! I'm currently in the market for a new piece of furniture, and I was wondering if you could recommend something to me. I'm specifically looking for a bookshelf that is sleek and modern in design, with clean lines and a minimalist aesthetic. In terms of color, I would prefer a white or light gray finish to match the rest of my decor. As for dimensions, I'm hoping for something compact yet functional, around 3 feet in height, 2 feet in width, and 1 foot in depth. Thank you so much!
+
+color: white or light gray
+dimensions: 3 feet (height) x 2 feet (width) x 1 foot (depth), [3 feet (height) x 2 feet (width) x 1 foot (depth), white or light gray, ['color', 'dimensions'], {'dimensions', 'color'}]
+
+6. Hi there, I'm interested in purchasing a new product and I have a few specific requirements. I'm looking for a compact device with dimensions around 5x7x10 inches, preferably in a sleek silver color. Additionally, I would like to know the price range for this product. If you have any recommendations that fit these criteria, please let me know. You can reach me at 555-555-5555. Thank you!
+
+color: silver
+dimensions: 5x7x10 inches, [5x7x10 inches, silver, ['dimensions', 'price', 'color', 'telephone number'], {'dimensions', 'color'}]
+
+5. Hi there! I'm interested in purchasing a new product and I have a few specific requirements. Firstly, I'm looking for a sleek and modern design, so I would prefer a product that comes in a vibrant red color. Additionally, I need the product to be compact and portable, so it would be great if you could recommend something with dimensions around 10x5x2 inches. Lastly, I'm hoping to find a product that is reasonably priced, preferably under $200. If you have any recommendations that meet these criteria, please let me know! My number is 888-888-8888. Thank you.
+
+color: vibrant red
+dimensions: 10x5x2 inches, [10x5x2 inches, vibrant red, ['color', 'telephone number', 'price', 'dimensions'], {'dimensions', 'color'}]
+
+4. Hi there! I'm currently in the market for a new phone and I was wondering if you could recommend something to me. I'm specifically looking for a sleek and compact phone with a modern design. It would be great if it came in a vibrant color like blue or red. Oh, and I also need it to have a large display size for optimal viewing. If you have any suggestions, please let me know! My number is 888-888-8888.
+
+color: blue or red
+dimensions: large display size, [large display size, blue or red, ['telephone number', 'dimensions', 'color'], {'dimensions', 'color'}]
+
+3. Hi there, I'm interested in purchasing a smartphone and I'm wondering if you have any recommendations. I'm specifically looking for a sleek and modern design with a vibrant green that stands out. Additionally, I would appreciate it if you could provide me with the telephone number of your store so I can inquire further. My number is 888-888-8888. Thank you! 
+
+color: vibrant green, [None, vibrant green, ['telephone number', 'color'], {'color'}]
+
+
+2. Hi there! I'm interested in purchasing a new product and I was wondering if you could recommend something that fits my budget. I'm looking for a product that is reasonably priced, preferably around $500. Can you help me find something within this price range? Thank you!, [None, None, ['price'], set()]
+
+
+1. Hi there! I'm in need of a new smartphone and I was wondering if you could recommend one for me. I'm specifically looking for a device with a great camera and long battery life. If you have any suggestions, please reach out to me at 888-888-8888. Thank you!, [None, None, ['telephone number'], set()]
+
+

@@ -32,3 +32,19 @@ feed in data and we say that price and tn are NOT attributes. see if model can e
 
 * Lets generate 100 first
 * First determine true accuracy (nothing wrong), then look into precision and recall
+
+
+
+In contex learning  LLMs and NLP
+
+2/9
+Be minimal with the prompt (we want diverse sentences)
+to not give example
+instead of parsing know ground truth and feed to LLM 
+
+
+pre define color
+pre define dims
+pre define number
+pre define price
+
