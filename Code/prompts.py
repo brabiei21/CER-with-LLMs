@@ -1,5 +1,20 @@
 from langchain.prompts.prompt import PromptTemplate
-# TODO: Implement a parser
+
+
+def get_blurb_prompt():
+    template = """
+    Write a random and creative blurb about some product including the following topics:
+
+    {features}
+
+    Specifically with the following values:
+
+    {values}
+
+    Make sure to only discuss the topics mention and nothing more. 
+    """
+
+    return PromptTemplate(template=template, input_variables=["features", "values"])
 
 
 def get_generation_prompt():

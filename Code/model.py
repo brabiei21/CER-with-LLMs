@@ -2,9 +2,9 @@ import os
 from langchain.chat_models import ChatOpenAI
 
 def init_llm(model_name="gpt-3.5-turbo-16k",
-             temperature=0.2,
+             temperature=0.5,
              max_tokens=10000,
-             model_kwargs={'frequency_penalty':0.2, 'presence_penalty':0}):
+             model_kwargs={'frequency_penalty':0.5, 'presence_penalty':0}):
 
     llm = ChatOpenAI(model_name=model_name,
                      temperature=temperature,
