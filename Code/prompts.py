@@ -3,7 +3,7 @@ from langchain.prompts.prompt import PromptTemplate
 
 def get_blurb_prompt():
     template = """
-    Write a random and creative blurb about some product including the following topics:
+    Write a few random sentences from any perspective (i.e. a review, a question, a feedback, etc.) about some product including the following topics:
 
     {features}
 
@@ -11,10 +11,56 @@ def get_blurb_prompt():
 
     {values}
 
-    Make sure to only discuss the topics mention and nothing more. 
+    Make sure to keep it relatively short and only discuss the topics mention and nothing more. 
     """
+    
+    # template = '''
+    # You are a customer chatting with an agent at an online home improvement store. Write a sentence that includes the following features: {features} and the corresponding values: {values}. 
+    # make sure to mention all values that are given.
+    # '''
 
     return PromptTemplate(template=template, input_variables=["features", "values"])
+
+    # you are a customer at a home improvement store, write a senstense
+    #You are a customer chatting with an agent at an online home improvement store. Write a sentence that includes...
+def get_eval_with_feature_prompt():
+    template = """
+    Given the following, what are the features mentioned about the product? These would be considered all possible features: {features}.
+    
+    Text: 
+    
+    {post}
+    
+    Format your response in json format. In other words, the specific feature is the 'key' and the corresponding 'value' is the actual value of the feature.
+    just give the json and nothing else. I the a feature is not mentioned, just leave it out. Don not put any null values or new lines inside each json object.
+    """
+
+    return PromptTemplate(template=template, input_variables=["features", "post"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def get_generation_prompt():

@@ -1,0 +1,100 @@
+{"Response": "{\n  \"dimension\": [\"3x3\"],\n  \"color\": []\n}"}
+{"Response": "{\"color\": \"vibrant purple\", \"dimension\": \"8x8\"}"}
+{"Response": "{}"}
+{"Response": "{\"color\": \"orange\", \"dimension\": \"6x6\"}"}
+{"Response": "{\"price\": \"$500\"}"}
+{"Response": "{\"color\": \"white\", \"dimension\": \"3x3\"}"}
+{"Response": "{\"color\": \"purple\"}"}
+{"Response": "{\"color\": \"vibrant purple\"}"}
+{"Response": "{\"color\": \"black\"}"}
+{"Response": "{\"color\": \"green\"}"}
+{"Response": "{\n  \"color\": \"white\",\n  \"dimension\": \"1x1\"\n}"}
+{"Response": "{\"color\": \"brown\", \"dimension\": \"9x9\"}"}
+{"Response": "{\"price\": \"$300\"}"}
+{"Response": "{\n  \"color\": \"purple\"\n}"}
+{"Response": "{}"}
+{"Response": "{\"color\": \"pink\"}"}
+{"Response": "{\"price\": \"$800\"}"}
+{"Response": "{\"dimension\": \"6x6\", \"color\": null}"}
+{"Response": "{}"}
+{"Response": "{\n  \"color\": \"vibrant orange\",\n  \"dimension\": \"6x6\"\n}"}
+{"Response": "{\"color\": \"brown\", \"dimension\": \"1x1\"}"}
+{"Response": "{\n  \"location\": \"San Antonio\",\n  \"downtown\": true,\n  \"River Walk\": true,\n  \"restaurant\": true,\n  \"heart of downtown\": true,\n  \"store\": true,\n  \"shoppers\": true,\n  \"attractions and landmarks\": true\n}"}
+{"Response": "{\"color\": \"blue\"}"}
+{"Response": "{\"dimension\": \"5x5\"}"}
+{"Response": "{\n  \"color\": \"brown\",\n  \"dimension\": \"1x1\"\n}"}
+{"Response": "{\"dimension\": \"10x10\"}"}
+{"Response": "{\n  \"color\": \"white\",\n  \"dimension\": \"4x4\"\n}"}
+{"Response": "{\"color\": \"vibrant red\", \"dimension\": \"6x6\"}"}
+{"Response": "{}"}
+{"Response": "{\"color\": \"purple\", \"dimension\": \"8x8\"}"}
+{"Response": "{\"feature\": \"color\"}"}
+{"Response": "{\n    \"color\": \"orange\",\n    \"dimension\": \"3x3\"\n}"}
+{"Response": "{\n    \"color\": \"vibrant green\",\n    \"dimension\": null\n}"}
+{"Response": "{\"dimension\": \"10x10\"}"}
+{"Response": "{\"color\": \"vibrant red\", \"dimension\": \"2x2\"}"}
+{"Response": "{\"color\": \"vibrant blue\", \"dimension\": \"5x5\"}"}
+{"Response": "{\"dimension\": \"compact\", \"color\": null}"}
+{"Response": "{\"dimension\": \"10x10\", \"color\": \"brown\"}"}
+{"Response": "{\"color\": \"red\", \"dimension\": \"1x1\"}"}
+{"Response": "{\n  \"color\": \"sleek black\",\n  \"dimension\": \"7x7\"\n}"}
+{"Response": "{\"price\": \"$900\", \"location\": \"Philadelphia\"}"}
+{"Response": "{\n  \"price\": \"$800\",\n  \"location\": \"San Diego\"\n}"}
+{"Response": "{\"color\": \"purple\", \"dimension\": \"7x7\"}"}
+{"Response": "{\"dimension\": \"5x5\"}"}
+{"Response": "{\"dimension\": \"7x7\"}"}
+{"Response": "{\"color\": \"vibrant green\", \"dimension\": \"not mentioned\"}"}
+{"Response": "{\"color\": \"purple\"}"}
+{"Response": "{\"color\": \"vibrant pink\", \"dimension\": \"9x9\"}"}
+{"Response": "{\n    \"dimension\": \"6x6 inches\",\n    \"color\": \"pink\"\n}"}
+{"Response": "{\n  \"price\": \"$200\"\n}"}
+{"Response": "{\"color\": \"brown\", \"dimension\": \"3x3\"}"}
+{"Response": "{}"}
+{"Response": "{\n  \"dimension\": \"8x8\"\n}"}
+{"Response": "{\"color\": \"brown\", \"dimension\": \"9x9\"}"}
+{"Response": "{\"price\": \"high\"}"}
+{"Response": "{\n    \"dimension\": \"6x6\"\n}"}
+{"Response": "{\"color\": \"black\", \"dimension\": \"7x7\"}"}
+{"Response": "{\"color\": \"black\"}"}
+{"Response": "{\"color\": \"orange\"}"}
+{"Response": "{\"color\": \"black\"}"}
+{"Response": "{\"dimension\": \"10x10\", \"color\": \"vibrant blue\"}"}
+{"Response": "{\"color\": \"blue\"}"}
+{"Response": "{\"dimension\": \"9x9 inches\", \"color\": \"black\"}"}
+{"Response": "{\"price\": \"$100\", \"quality\": \"high\", \"affordability\": \"affordable\", \"value for money\": \"great\", \"convenience\": \"convenient\", \"location\": \"Dallas\", \"accessibility\": \"easily accessible\", \"parking space\": \"ample\"}"}
+{"Response": "{\n    \"dimension\": [\"4x4\"],\n    \"color\": []\n}"}
+{"Response": "{\"price\": \"$500\"}"}
+{"Response": "{\"dimension\": \"5x5\"}"}
+{"Response": "{\"dimension\": \"8x8\"}"}
+{"Response": "{\"dimension\": \"3x3\", \"color\": \"red\"}"}
+{"Response": "{\"color\": \"vibrant green\", \"dimension\": \"8x8\"}"}
+{"Response": "{\n  \"dimension\": \"5x5\",\n  \"color\": \"vibrant green\"\n}"}
+{"Response": "{\"dimension\": \"6x6\"}"}
+{"Response": "{\n  \"dimension\": \"8x8\",\n  \"color\": \"brown\"\n}"}
+{"Response": "{\n  \"color\": \"vibrant green\",\n  \"dimension\": \"7x7\"\n}"}
+{"Response": "{\"color\": \"pink\", \"dimension\": \"4x4\"}"}
+{"Response": "{\n  \"dimension\": \"7x7\"\n}"}
+{"Response": "{\n  \"color\": \"black\",\n  \"dimension\": \"1x1\"\n}"}
+{"Response": "{\n    \"color\": \"purple\"\n}"}
+{"Response": "{\"color\": \"vibrant blue\"}"}
+{"Response": "{\"price\": \"$900\"}"}
+{"Response": "{\"dimension\": \"1x1\"}"}
+{"Response": "{\"color\": \"pink\", \"dimension\": \"1x1\"}"}
+{"Response": "{\"price\": \"$1000\"}"}
+{"Response": "{\"price\": \"$1000\"}"}
+{"Response": "{\n  \"dimension\": [\"7x7\"],\n  \"size\": [\"large\"]\n}"}
+{"Response": "{\n  \"color\": \"orange\",\n  \"dimension\": \"10x10\"\n}"}
+{"Response": "{\"dimension\": \"2x2\"}"}
+{"Response": "{\"dimension\": \"5x5\"}"}
+{"Response": "{\n    \"dimension\": \"6x6\",\n    \"color\": \"black\"\n}"}
+{"Response": "{\"color\": \"vibrant orange\"}"}
+{"Response": "{\n    \"dimension\": \"2x2\"\n}"}
+{"Response": "{\"dimension\": \"7x7\"}"}
+{"Response": "{\"dimension\": \"5x5\", \"color\": \"black\"}"}
+{"Response": "{\"color\": \"blue\"}"}
+{"Response": "{\"dimension\": \"7x7\", \"color\": \"vibrant yellow\"}"}
+{"Response": "{\n    \"color\": \"white\",\n    \"dimension\": \"9x9\"\n}"}
+{"Response": "{\"color\": \"vibrant pink\", \"dimension\": \"6x6\"}"}
+{"Response": "{\n    \"color\": [\"vibrant orange\", \"bright orange\", \"variety of colors\"],\n    \"dimension\": []\n}"}
+{"Response": "{\n  \"dimension\": \"6x6\",\n  \"color\": \"yellow\"\n}"}
+{"Response": "{\n  \"color\": \"orange\"\n}"}
