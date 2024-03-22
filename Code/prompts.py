@@ -23,19 +23,41 @@ def get_blurb_prompt():
 
     # you are a customer at a home improvement store, write a senstense
     #You are a customer chatting with an agent at an online home improvement store. Write a sentence that includes...
-def get_eval_with_feature_prompt():
-    template = """
-    Given the following, what are the features mentioned about the product? These would be considered all possible features: {features}.
+def get_eval_with_feature_prompt(with_feature=True):
+  
+    if with_feature:
+        template = """
+        Given the following, what are the features mentioned about the product? These would be considered all possible features: 
+        
+        {features}
+        
+        Text: 
+        
+        {post}
+        
+        Format your response like this: 
+        
+        ATTR1_NAME::ATTR1_VALUE;;
+        ATTR2_NAME::ATTR2_VALUE;;
+        
+        If a feature is not mentioned, just leave it out. In other words, do not include something like ATTR_NAME::;; in your response.
+        """
+        return PromptTemplate(template=template, input_variables=["features", "post"])
     
-    Text: 
-    
-    {post}
-    
-    Format your response in json format. In other words, the specific feature is the 'key' and the corresponding 'value' is the actual value of the feature.
-    just give the json and nothing else. I the a feature is not mentioned, just leave it out. Don not put any null values or new lines inside each json object.
-    """
-
-    return PromptTemplate(template=template, input_variables=["features", "post"])
+    else:
+        template = """
+        Given the following, what are the features mentioned about the product? 
+        
+        Text: 
+        
+        {post}
+        
+        Format your response like this: 
+        
+        ATTR1_NAME::ATTR1_VALUE;;
+        ATTR2_NAME::ATTR2_VALUE;;
+        """
+        return PromptTemplate(template=template, input_variables=["post"])
 
 
 
