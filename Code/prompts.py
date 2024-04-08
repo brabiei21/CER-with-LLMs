@@ -46,16 +46,17 @@ def get_eval_with_feature_prompt(with_feature=True):
     
     else:
         template = """
-        Given the following, what are the features mentioned about the product? 
+        Given the following, what are the features mentioned about the product? Only mention the features in the text below.
         
         Text: 
         
         {post}
         
-        Format your response like this: 
+        YOU MUST CONFORM TO THE FOLLOWING FORMAT: 
         
-        ATTR1_NAME::ATTR1_VALUE;;
-        ATTR2_NAME::ATTR2_VALUE;;
+        ATTR_NAME::ATTR_VALUE;;
+        
+        for example if the text mentions that the product is red, you would write color::red;; in your response. both the attribute and value must be present in your response!
         """
         return PromptTemplate(template=template, input_variables=["post"])
 
