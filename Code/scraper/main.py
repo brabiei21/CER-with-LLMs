@@ -2,72 +2,99 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+import json
+import os
 
-def has_reached_bottom(driver):
-    # Get the current scroll position
-    current_scroll_position = driver.execute_script("return window.pageYOffset;")
-    
-    # Get the maximum scroll height of the page
-    max_scroll_height = driver.execute_script("return document.body.scrollHeight;")
-    
-    # Check if the current scroll position is at the bottom
-    return current_scroll_position == max_scroll_height
-def scroll_to_end(driver):
-    # Scroll to the end of the page
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 def GetAllProductURLS():
+    
+    CURRENT_PAGE = 'https://www.homedepot.com/b/Home-Decor/N-5yc1vZas6p?catStyle=ShowProducts'
+    REACHED_END = False
+    # Check if the file exists
+    if os.path.exists('links_mem.txt'):
+        # Read the existing content from the file
+        with open('links_mem.txt', 'r') as f:
+            content = f.readlines()
+        if len(content) > 0 and content[-1] != None:
+            CURRENT_PAGE = content[-1]
+            print('[NOTICE] Continuing from the following page:', CURRENT_PAGE)
+        else:
+            print('[WARNING] nothing in memory, getting links from the very beginning')
+    else:
+        print('[WARNING] nothing in memory, getting links from the very beginning')
+
     # Launch a headless Chrome browser
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
 
     # Navigate to the webpage
-    driver.get("https://www.homedepot.com/b/Home-Decor/N-5yc1vZas6p?catStyle=ShowProducts")
+    driver.get(CURRENT_PAGE)
 
-    # Wait for the page to load fully
-    print("LOADING PAGE...")
-    time.sleep(3)  # Adjust as needed
-    num_scrolls = 15  # You may need to adjust this based on the page's structure
-    # # body = driver.find_element(By.TAG_NAME, "body")
-    # # for _ in range(num_scrolls):
-    # #     #body.send_keys(Keys.PAGE_DOWN)
-    # #     time.sleep(1)  # Adjust the sleep time as needed
-    # #     scroll_to_end(driver)
-    # #     print("SCROLL", str(_+1), "/", num_scrolls)
-    # while not has_reached_bottom(driver):
-    #     scroll_to_end(driver)
-    #     time.sleep(1)
-    #     print("SCROLLING...")
-    reached_page_end = False
-    last_height = driver.execute_script("return document.body.scrollHeight")
+    while not REACHED_END:
+        links = []
+        # Wait for the page to load fully
+        print("LOADING PAGE...")
+        time.sleep(3)  # Adjust as needed
+        num_scrolls = 15  # You may need to adjust this based on the page's structure
 
-    while not reached_page_end:
-        driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   
-        time.sleep(2)
-        new_height = driver.execute_script("return document.body.scrollHeight")
-        if last_height == new_height:
-                reached_page_end = True
+        reached_page_end = False
+        last_height = driver.execute_script("return document.body.scrollHeight")
+
+        while not reached_page_end:
+            driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   
+            time.sleep(2)
+            new_height = driver.execute_script("return document.body.scrollHeight")
+            if last_height == new_height:
+                    reached_page_end = True
+            else:
+                    last_height = new_height
+        time.sleep(3) # allow remaining page to load
+
+        # Find all <div> elements with data-testid="product-header"
+        results_grid = driver.find_element(By.CSS_SELECTOR, "div[class='results-wrapped']")
+        target_divs = results_grid.find_elements(By.CSS_SELECTOR, "div[data-testid='product-header']")
+
+        # Iterate through each <div> and find the <a> tag within it
+        for div in target_divs:
+            # Find the <a> tag within the <div>
+            span_tag = div.find_element(By.TAG_NAME, "span")
+            a_tag = div.find_element(By.TAG_NAME, "a")
+            if a_tag:
+                # Extract the href attribute
+                href = a_tag.get_attribute("href")
+                links.append(('title', span_tag.text, 'href', href))
+                print("Title:", span_tag.text, "\thref:", href)
+        
+        # TODO: Fix json to be contiguous
+        # dump links into file
+        # Write the list of tuples to a JSON file
+        # Check if the file exists
+        if os.path.exists("links.json"):
+            # Read the existing content from the file
+            with open("links.json", 'r') as f:
+                content = f.read()
+            if not len(content) > 0:
+                content = '[]'
         else:
-                last_height = new_height
-    time.sleep(3) # allow remaining page to load
+            content = '[]'  # Initialize with an empty list if the file doesn't exist
+        # Load existing JSON content into a Python list
+        data = json.loads(content)
 
-    # Find all <div> elements with data-testid="product-header"
-    target_divs = driver.find_elements(By.CSS_SELECTOR, "div[data-testid='product-header']")
+        # Append the new JSON object to the existing list
+        data.append(links)
 
-    # Iterate through each <div> and find the <a> tag within it
-    links = []
-    for div in target_divs:
-        # Find the <a> tag within the <div>
-        span_tag = div.find_element(By.TAG_NAME, "span")
-        a_tag = div.find_element(By.TAG_NAME, "a")
-        if a_tag:
-            # Extract the href attribute
-            href = a_tag.get_attribute("href")
-            links.append(href)
-            print("Title:", span_tag.text, "\thref:", href)
-    
+        with open('links.json', 'w') as f:
+            json.dump(data, f)
 
-    # TODO: Move to next page of the product page -- currently does 1
+        # Move to next page of the product page
+        a_tags = driver.find_elements(By.CSS_SELECTOR, "a[class='hd-pagination__link ']")
+        if a_tags[-1].get_attribute("aria-label") == None or a_tags[-1].get_attribute("aria-label") != "Next":
+            REACHED_END = True
+        else:
+            CURRENT_PAGE = a_tags[-1].get_attribute("href")
+            with open('links_mem.txt', 'a') as f:
+                f.write(str(CURRENT_PAGE+'\n'))
+            driver.get(CURRENT_PAGE)
 
     # Close the browser
     driver.quit()
