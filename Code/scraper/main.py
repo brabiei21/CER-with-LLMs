@@ -1,9 +1,21 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import json
 import os
+
+def _OutputHTML(driver):
+    # Open a file to write the HTML content
+    with open("page_content.html", "w", encoding="utf-8") as f:
+        # Iterate over all elements on the page
+        for element in driver.find_elements(By.XPATH, "//*"):
+            # Get the HTML content of each element
+            html_content = element.get_attribute("outerHTML")
+            # Write the HTML content to the file
+            f.write(html_content + "\n")
 
 def GetAllProductURLS():
     
@@ -120,7 +132,8 @@ def GetSpecifications():
 
     # Launch a headless Chrome browser
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    options.add_argument("--disable-site-isolation-trials")
+    # options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
 
     for group_of_products in links:
@@ -130,10 +143,12 @@ def GetSpecifications():
             driver.get(link)
 
             print("LOADING PAGE...")
+            time.sleep(100000)
             time.sleep(3)  # Adjust as needed
             reached_page_end = False
             last_height = driver.execute_script("return document.body.scrollHeight")
 
+            print("SCROLLING DOWN...")
             while not reached_page_end:
                 driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   
                 time.sleep(2)
@@ -142,10 +157,81 @@ def GetSpecifications():
                         reached_page_end = True
                 else:
                         last_height = new_height
-            time.sleep(3) # allow remaining page to load
+            print("-=- Reached End of Page -=-")
+            # time.sleep(3) # allow remaining page to load
 
-            div_main_specs = driver.find_elements(By.CSS_SELECTOR, "div[class='kpf__specs']")
-            headers = driver.find_elements(By.CSS_SELECTOR, "div[class='kpf__name']")
+            # div_main_specs = driver.find_elements(By.CSS_SELECTOR, "div[class='kpf__specs']")
+            # try:
+            #     # Wait for the alert to appear
+            #     alert = driver.switch_to.alert
+
+            #     # Check the alert text
+            #     if "Share your location?" in alert.text:
+            #         # If the alert is for location sharing, click on "Block"
+            #         alert.dismiss()  # This clicks on the "Block" button
+            #     else:
+            #         # Handle other alerts if needed
+            #         alert.dismiss()  # Dismiss the alert
+
+            # except:
+            #     # No alert found or other exception occurred
+            #     pass
+            # try:
+            #     # Execute JavaScript to remove both elements
+            #     driver.execute_script("""
+            #         var inputElement = document.getElementById('typeahead-search-field-input');
+            #         if (inputElement) {
+            #             inputElement.parentNode.removeChild(inputElement);
+            #         }
+                    
+            #         var divElement = document.querySelector('[data-testid="search-field-container"]');
+            #         if (divElement) {
+            #             divElement.parentNode.removeChild(divElement);
+            #         }
+                    
+            #         var formElement = document.querySelector('[data-testid="search-field-root"]');
+            #         if (formElement) {
+            #             formElement.parentNode.removeChild(formElement);
+            #         }
+                    
+            #         var typeaheadElement = document.getElementById('typeahead-container');
+            #         if (typeaheadElement) {
+            #             typeaheadElement.parentNode.removeChild(typeaheadElement);
+            #         }
+
+            #         var divElement2 = document.querySelector('.sui-flex.sui-font-regular.sui-items-center.sui-bg-primary.sui-text-primary.sui-px-4.sui-pt-4.sui-pb-12.sui-gap-2.sui-bg-primary.lg:sui-pb-4.lg:sui-gap-6');
+            #         if (divElement2) {
+            #             divElement2.parentNode.removeChild(divElement2);
+            #         }
+            #     """)
+
+            #     # Now you can continue with your normal workflow, e.g., clicking on elements, scraping data, etc.
+
+            # except Exception as e:
+            #     print("Error In Element Removal:", e)
+            # _OutputHTML(driver)
+            try:
+                # Wait for the element to be clickable
+                # element = WebDriverWait(driver, 10).until(
+                #     EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/section[1]/div/div[2]/div/div[1]"))
+                # )
+                element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
+
+                # Execute JavaScript to click on the element
+                # driver.execute_script("arguments[0].click();", element)
+
+                # Click on the element
+                element.click()
+                time.sleep(2)
+
+            except Exception as e:
+                print("Error in Clicking Element:", e)
+            _OutputHTML(driver)
+            # dropdown = driver.find_element(By.CSS_SELECTOR, "div[id='specifications']")
+            dropdown = driver.find_element(By.XPATH, "//*[@id='product-section-specifications']")
+            dropdown.click()
+            headers = dropdown.find_elements(By.CSS_SELECTOR, "div[class='kpf__name']")
+            print(len(headers))
             print(headers[0].text)
             return 
 
