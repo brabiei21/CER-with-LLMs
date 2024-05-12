@@ -35,3 +35,5 @@ https://www.zenrows.com/blog/selenium-avoid-bot-detection#disable-automation-ind
 
 It also seems that adding the user configuration is required to be udetected:
 `options.add_argument("user-data-dir=/home/sam/.config/google-chrome/Default")`
+
+It should also be noted that if the scraper is ran too many times in short time span, the anti-bot will be in effect. One way to circumvent this is using a proxy. Another is simply waiting a while, which isn't the best option.

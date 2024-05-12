@@ -135,7 +135,7 @@ def GetSpecifications():
     options = webdriver.ChromeOptions()
 
     # # Define the proxy server 
-    # PROXY = "18.223.25.15:80
+    # PROXY = "18.223.25.15:80"
     # # Add the proxy as argument 
     # options.add_argument("--proxy-server=%s" % PROXY)
 
@@ -183,6 +183,7 @@ def GetSpecifications():
                     th_td_pairs = {}  # Initialize an empty dictionary for the current grid
 
                     grids = element.find_elements(By.TAG_NAME, "table")
+                    time.sleep(1)
                     for grid in grids:
                         th_tags = grid.find_elements(By.TAG_NAME, "th")
                         td_tags = grid.find_elements(By.TAG_NAME, "td")
