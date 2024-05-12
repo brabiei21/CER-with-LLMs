@@ -163,22 +163,80 @@ def GetSpecifications():
     driver = webdriver.Chrome(options=options)
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})") 
 
+    # Initializing a list with two Useragents 
+    useragentarray = [ 
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", 
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", 
+    ] 
+
+    for i in range(len(useragentarray)): 
+        # Setting user agent iteratively as Chrome 108 and 107 
+        driver.execute_cdp_cmd("Network.setUserAgentOverride", {"userAgent": useragentarray[i]}) 
+        print(driver.execute_script("return navigator.userAgent;")) 
+
     for group_of_products in links:
         for product in group_of_products:
             link = product[-1]
             print(link)
             driver.get(link)
-            print("LOADED!")
-            wait = WebDriverWait(driver, timeout=2, poll_frequency=0.2)
+            wait = WebDriverWait(driver, timeout=5)
+            time.sleep(4.5) 
             # Open the Specification accordion element
-            wait.until(EC.element_to_be_clickable((By.ID, "product-section-key-feat"))).click()
+            try:
+                wait.until(EC.element_to_be_clickable((By.ID, "product-section-key-feat"))).click()
+                headers = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div[class='kpf__name']")))
+                time.sleep(3)
+                grids = element.find_elements(By.TAG_NAME, "table")
+                print("Grid Length", len(grids))
+                for grid in grids:
+                    th_tags = grid.find_elements(By.TAG_NAME, "th")
+                    td_tags = grid.find_elements(By.TAG_NAME, "td")
+
+                    for th_tag, td_tag in zip(th_tags, td_tags):
+                        th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
+                        td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
+                        
+                        for p in th_p_tags:
+                            print("th:", p.text)
+                        
+                        for p in td_p_tags:
+                            print("td:", p.text)
+                return 
+            except Exception as e:
+                print("ERROR:", e)
+                element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
+                element.click()
+                time.sleep(3)
+                grids = element.find_elements(By.TAG_NAME, "table")
+                print("Grid Length", len(grids))
+                for grid in grids:
+                    th_tags = grid.find_elements(By.TAG_NAME, "th")
+                    td_tags = grid.find_elements(By.TAG_NAME, "td")
+
+                    for th_tag, td_tag in zip(th_tags, td_tags):
+                        th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
+                        td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
+                        
+                        for p in th_p_tags:
+                            print(p.text, '\t')
+                        
+                        for p in td_p_tags:
+                            print(p.text)
+
+                # headers = element.find_elements(By.CSS_SELECTOR, "div[class='kpf__name']")
+                # print(len(headers))
+                # for header in headers:
+                #     print(header.text)
+                time.sleep(10000)
+                return 
+
 
             # Find elements in the Specification section
-            headers = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div.kpf__name")))
-            print(len(headers))
-            for header in headers:
-                print(header.text)
-            return 
+            # headers = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div[class='kpf__name']")))
+            # print(len(headers))
+            # for header in headers:
+            #     print(header.text)
+            # return 
             # _OutputHTML(driver)
 
             print("LOADING PAGE...")
