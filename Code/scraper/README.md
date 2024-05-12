@@ -26,3 +26,9 @@ deactivate
 ```shell
 python3 main.py
 ```
+
+# INFO
+The prupose of this section is to provide additional information about particular descisions in designing the scraper.
+
+There is an anti-bot protection on the product webpage. To circumvent this, it was found that the prtoection used was based on indicator WebDriver flags.
+https://www.zenrows.com/blog/selenium-avoid-bot-detection#disable-automation-indicator-webdriver-flags

@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from concurrent.futures import ThreadPoolExecutor
 import time
 import json
 import os
@@ -132,15 +133,53 @@ def GetSpecifications():
 
     # Launch a headless Chrome browser
     options = webdriver.ChromeOptions()
-    options.add_argument("--disable-site-isolation-trials")
+    # options.add_argument("--disable-site-isolation-trials")
+    # prefs = {
+    #         "profile.managed_default_content_settings.images": 2,
+    #         "profile.default_content_setting_values.notifications": 2,
+    #         "profile.managed_default_content_settings.stylesheets": 2,
+    #         "profile.managed_default_content_settings.cookies": 2,
+    #         "profile.managed_default_content_settings.javascript": 1,
+    #         "profile.managed_default_content_settings.plugins": 1,
+    #         "profile.managed_default_content_settings.popups": 2,
+    #         "profile.managed_default_content_settings.geolocation": 2,
+    #         "profile.managed_default_content_settings.media_stream": 2
+    #     }
+
+    # options.add_experimental_option("prefs", prefs)
+    options.add_argument("user-data-dir=/home/sam/.config/google-chrome/Default")
+    # Adding argument to disable the AutomationControlled flag 
+    options.add_argument("--disable-blink-features=AutomationControlled") 
+    
+    # Exclude the collection of enable-automation switches 
+    options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
+    
+    # Turn-off userAutomationExtension 
+    options.add_experimental_option("useAutomationExtension", False)
+    # Changing the property of the navigator value for webdriver to undefined 
+    # options.add_argument("--disable-extensions")
+    # options.add_argument('--blink-settings=imagesEnabled=false')
     # options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
+    driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})") 
 
     for group_of_products in links:
         for product in group_of_products:
             link = product[-1]
             print(link)
             driver.get(link)
+            print("LOADED!")
+            wait = WebDriverWait(driver, timeout=2, poll_frequency=0.2)
+            # Open the Specification accordion element
+            wait.until(EC.element_to_be_clickable((By.ID, "product-section-key-feat"))).click()
+
+            # Find elements in the Specification section
+            headers = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div.kpf__name")))
+            print(len(headers))
+            for header in headers:
+                print(header.text)
+            return 
+            # _OutputHTML(driver)
 
             print("LOADING PAGE...")
             time.sleep(100000)
