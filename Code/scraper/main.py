@@ -130,23 +130,15 @@ def GetSpecifications():
     else:
         print('[ERROR] file not found, exiting function ...')
         return 
-
+    
     # Launch a headless Chrome browser
     options = webdriver.ChromeOptions()
-    # options.add_argument("--disable-site-isolation-trials")
-    # prefs = {
-    #         "profile.managed_default_content_settings.images": 2,
-    #         "profile.default_content_setting_values.notifications": 2,
-    #         "profile.managed_default_content_settings.stylesheets": 2,
-    #         "profile.managed_default_content_settings.cookies": 2,
-    #         "profile.managed_default_content_settings.javascript": 1,
-    #         "profile.managed_default_content_settings.plugins": 1,
-    #         "profile.managed_default_content_settings.popups": 2,
-    #         "profile.managed_default_content_settings.geolocation": 2,
-    #         "profile.managed_default_content_settings.media_stream": 2
-    #     }
 
-    # options.add_experimental_option("prefs", prefs)
+    # # Define the proxy server 
+    # PROXY = "18.223.25.15:80
+    # # Add the proxy as argument 
+    # options.add_argument("--proxy-server=%s" % PROXY)
+
     options.add_argument("user-data-dir=/home/sam/.config/google-chrome/Default")
     # Adding argument to disable the AutomationControlled flag 
     options.add_argument("--disable-blink-features=AutomationControlled") 
@@ -156,9 +148,6 @@ def GetSpecifications():
     
     # Turn-off userAutomationExtension 
     options.add_experimental_option("useAutomationExtension", False)
-    # Changing the property of the navigator value for webdriver to undefined 
-    # options.add_argument("--disable-extensions")
-    # options.add_argument('--blink-settings=imagesEnabled=false')
     # options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})") 
@@ -176,182 +165,76 @@ def GetSpecifications():
 
     for group_of_products in links:
         for product in group_of_products:
-            link = product[-1]
+            link = product[-1] # get last element in link tuple (href link)
             print(link)
             driver.get(link)
             wait = WebDriverWait(driver, timeout=5)
-            time.sleep(4.5) 
-            # Open the Specification accordion element
-            try:
-                wait.until(EC.element_to_be_clickable((By.ID, "product-section-key-feat"))).click()
-                headers = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div[class='kpf__name']")))
-                time.sleep(3)
-                grids = element.find_elements(By.TAG_NAME, "table")
-                print("Grid Length", len(grids))
-                for grid in grids:
-                    th_tags = grid.find_elements(By.TAG_NAME, "th")
-                    td_tags = grid.find_elements(By.TAG_NAME, "td")
+            UNSUCCESSFUL = True
+            while UNSUCCESSFUL:
+                time.sleep(2.5) 
+                # Open the Specification accordion element
+                try:
+                    # element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
+                    element = wait.until(EC.element_to_be_clickable((By.ID, "product-section-key-feat")))
+                    element.click()
+                    # headers = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div[class='kpf__name']")))
+                    time.sleep(3)
+                    all_th_td_pairs = {}  # Initialize an empty dictionary to store all key-value pairs
+                    th_td_pairs = {}  # Initialize an empty dictionary for the current grid
 
-                    for th_tag, td_tag in zip(th_tags, td_tags):
-                        th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
-                        td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
+                    grids = element.find_elements(By.TAG_NAME, "table")
+                    for grid in grids:
+                        th_tags = grid.find_elements(By.TAG_NAME, "th")
+                        td_tags = grid.find_elements(By.TAG_NAME, "td")
                         
-                        for p in th_p_tags:
-                            print("th:", p.text)
-                        
-                        for p in td_p_tags:
-                            print("td:", p.text)
-                return 
-            except Exception as e:
-                print("ERROR:", e)
-                element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
-                element.click()
-                time.sleep(3)
-                grids = element.find_elements(By.TAG_NAME, "table")
-                print("Grid Length", len(grids))
-                for grid in grids:
-                    th_tags = grid.find_elements(By.TAG_NAME, "th")
-                    td_tags = grid.find_elements(By.TAG_NAME, "td")
+                        # th_td_pairs = {}  # Initialize an empty dictionary for the current grid
 
-                    for th_tag, td_tag in zip(th_tags, td_tags):
-                        th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
-                        td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
-                        
-                        for p in th_p_tags:
-                            print(p.text, '\t')
-                        
-                        for p in td_p_tags:
-                            print(p.text)
+                        for th_tag, td_tag in zip(th_tags, td_tags):
+                            th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
+                            td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
 
-                # headers = element.find_elements(By.CSS_SELECTOR, "div[class='kpf__name']")
-                # print(len(headers))
-                # for header in headers:
-                #     print(header.text)
-                time.sleep(10000)
-                return 
+                            th_texts = [p.text for p in th_p_tags]
+                            td_texts = [p.text for p in td_p_tags]
 
+                            th_td_pairs.update(dict(zip(th_texts, td_texts)))  # Update the dictionary with new pairs for each iteration
 
-            # Find elements in the Specification section
-            # headers = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div[class='kpf__name']")))
-            # print(len(headers))
-            # for header in headers:
-            #     print(header.text)
-            # return 
-            # _OutputHTML(driver)
+                        all_th_td_pairs.update(th_td_pairs)  # Update the main dictionary with pairs for the current grid
 
-            print("LOADING PAGE...")
-            time.sleep(100000)
-            time.sleep(3)  # Adjust as needed
-            reached_page_end = False
-            last_height = driver.execute_script("return document.body.scrollHeight")
+                    print(all_th_td_pairs)
+                    print(th_td_pairs)
+                    UNSUCCESSFUL = False
+                        # for th_tag, td_tag in zip(th_tags, td_tags):
+                        #     th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
+                        #     td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
+                            
+                        #     for p in th_p_tags:
+                        #         print(p.text, '\t')
+                            
+                        #     for p in td_p_tags:
+                        #         print(p.text)
+                except Exception as e:
+                    print("ERROR:", e)
+                    print("ERROR -- REFRESHING")
+                    driver.refresh()
+                    time.sleep(5)
+                    # element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
+                    # element.click()
+                    # time.sleep(3)
+                    # grids = element.find_elements(By.TAG_NAME, "table")
+                    # print("Grid Length", len(grids))
+                    # for grid in grids:
+                    #     th_tags = grid.find_elements(By.TAG_NAME, "th")
+                    #     td_tags = grid.find_elements(By.TAG_NAME, "td")
 
-            print("SCROLLING DOWN...")
-            while not reached_page_end:
-                driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   
-                time.sleep(2)
-                new_height = driver.execute_script("return document.body.scrollHeight")
-                if last_height == new_height:
-                        reached_page_end = True
-                else:
-                        last_height = new_height
-            print("-=- Reached End of Page -=-")
-            # time.sleep(3) # allow remaining page to load
+                    #     for th_tag, td_tag in zip(th_tags, td_tags):
+                    #         th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
+                    #         td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
 
-            # div_main_specs = driver.find_elements(By.CSS_SELECTOR, "div[class='kpf__specs']")
-            # try:
-            #     # Wait for the alert to appear
-            #     alert = driver.switch_to.alert
-
-            #     # Check the alert text
-            #     if "Share your location?" in alert.text:
-            #         # If the alert is for location sharing, click on "Block"
-            #         alert.dismiss()  # This clicks on the "Block" button
-            #     else:
-            #         # Handle other alerts if needed
-            #         alert.dismiss()  # Dismiss the alert
-
-            # except:
-            #     # No alert found or other exception occurred
-            #     pass
-            # try:
-            #     # Execute JavaScript to remove both elements
-            #     driver.execute_script("""
-            #         var inputElement = document.getElementById('typeahead-search-field-input');
-            #         if (inputElement) {
-            #             inputElement.parentNode.removeChild(inputElement);
-            #         }
-                    
-            #         var divElement = document.querySelector('[data-testid="search-field-container"]');
-            #         if (divElement) {
-            #             divElement.parentNode.removeChild(divElement);
-            #         }
-                    
-            #         var formElement = document.querySelector('[data-testid="search-field-root"]');
-            #         if (formElement) {
-            #             formElement.parentNode.removeChild(formElement);
-            #         }
-                    
-            #         var typeaheadElement = document.getElementById('typeahead-container');
-            #         if (typeaheadElement) {
-            #             typeaheadElement.parentNode.removeChild(typeaheadElement);
-            #         }
-
-            #         var divElement2 = document.querySelector('.sui-flex.sui-font-regular.sui-items-center.sui-bg-primary.sui-text-primary.sui-px-4.sui-pt-4.sui-pb-12.sui-gap-2.sui-bg-primary.lg:sui-pb-4.lg:sui-gap-6');
-            #         if (divElement2) {
-            #             divElement2.parentNode.removeChild(divElement2);
-            #         }
-            #     """)
-
-            #     # Now you can continue with your normal workflow, e.g., clicking on elements, scraping data, etc.
-
-            # except Exception as e:
-            #     print("Error In Element Removal:", e)
-            # _OutputHTML(driver)
-            try:
-                # Wait for the element to be clickable
-                # element = WebDriverWait(driver, 10).until(
-                #     EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/section[1]/div/div[2]/div/div[1]"))
-                # )
-                element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
-
-                # Execute JavaScript to click on the element
-                # driver.execute_script("arguments[0].click();", element)
-
-                # Click on the element
-                element.click()
-                time.sleep(2)
-
-            except Exception as e:
-                print("Error in Clicking Element:", e)
-            _OutputHTML(driver)
-            # dropdown = driver.find_element(By.CSS_SELECTOR, "div[id='specifications']")
-            dropdown = driver.find_element(By.XPATH, "//*[@id='product-section-specifications']")
-            dropdown.click()
-            headers = dropdown.find_elements(By.CSS_SELECTOR, "div[class='kpf__name']")
-            print(len(headers))
-            print(headers[0].text)
-            return 
-
-    # Navigate to the webpage
-    print(links[0][0][-1])
-    return
-    driver.get()
-
-    print("LOADING PAGE...")
-    time.sleep(3)  # Adjust as needed
-
-    reached_page_end = False
-    last_height = driver.execute_script("return document.body.scrollHeight")
-
-    while not reached_page_end:
-        driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   
-        time.sleep(2)
-        new_height = driver.execute_script("return document.body.scrollHeight")
-        if last_height == new_height:
-                reached_page_end = True
-        else:
-                last_height = new_height
-    time.sleep(3) # allow remaining page to load
+                    #     th_texts = [p.text for p in th_p_tags]
+                    #     td_texts = [p.text for p in td_p_tags]
+                    #     print(th_texts, '\n', td_texts)
+                    #     th_td_pairs = dict(zip(th_texts, td_texts))
+                    #     print(th_td_pairs)
 
 if __name__ == '__main__':
     # GetAllProductURLS()
