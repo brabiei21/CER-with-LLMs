@@ -34,6 +34,10 @@ There is an anti-bot protection on the product webpage. To circumvent this, it w
 https://www.zenrows.com/blog/selenium-avoid-bot-detection#disable-automation-indicator-webdriver-flags
 
 It also seems that adding the user configuration is required to be udetected:
-`options.add_argument("user-data-dir=/home/sam/.config/google-chrome/Default")`
+- Linux `options.add_argument("user-data-dir=/home/${USER}/.config/google-chrome/Default")`
+- Windows `options.add_argument("user-data-dir=C:\Users\<username>\AppData\Local\Google\Chrome\User Data\Default")`
+- Mac `options.add_argument("user-data-dir=Users/<username>/Library/Application Support/Google/Chrome/Default")`
 
-It should also be noted that if the scraper is ran too many times in short time span, the anti-bot will be in effect. One way to circumvent this is using a proxy. Another is simply waiting a while, which isn't the best option.
+It should also be noted that **if the scraper is ran too many times in short time span, the anti-bot will be in effect**. One way to circumvent this is using a proxy. Another is simply waiting a while, which isn't the best option.
+
+The function `rand_time()` was implemented to simulate user input (to an extent). Some websites can detect if a bot is being used if the user interaction is too consistent (i.e everything is clicked within 1/100 of a second). There is a docstring explaing how to function works, but there are 3 presets and the developer can choose a time between `A` and `B` (inclusive) to input for `time.sleep` 

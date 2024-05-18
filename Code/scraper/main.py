@@ -7,6 +7,36 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 import json
 import os
+import random
+
+def rand_time(A=0, B=0, mode=1):
+    """
+    Returns a random number between A and B (inclusive) based on the mode.
+    
+    Parameters:
+    A (int): The lower bound of the range.
+    B (int): The upper bound of the range.
+    mode (str): The mode of operation. Can be 'fast', 'short', or 'long'.
+    
+    Returns:
+    int: A random number between A and B (inclusive).
+    """
+    if mode in ['fast', 1, 'short', 2, 'long', 3]:
+            wait_times = {
+                'fast': (0.5, 3), 
+                'short': (3, 6),
+                'long': (6, 15),
+                1: (0.5, 3), 
+                2: (3, 6),
+                3: (6, 15)
+            }
+            
+            # Get a random wait time within the specified range for the mode
+            wait_time = random.uniform(*wait_times[mode])
+            return wait_time
+    
+    # Return a random number between A and B (inclusive)
+    return random.randint(A, B)
 
 def _OutputHTML(driver):
     # Open a file to write the HTML content
@@ -171,14 +201,14 @@ def GetSpecifications():
             wait = WebDriverWait(driver, timeout=5)
             UNSUCCESSFUL = True
             while UNSUCCESSFUL:
-                time.sleep(2.5) 
+                time.sleep(rand_time(mode=2)) 
                 # Open the Specification accordion element
                 try:
                     # element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
                     element = wait.until(EC.element_to_be_clickable((By.ID, "product-section-key-feat")))
                     element.click()
                     # headers = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "div[class='kpf__name']")))
-                    time.sleep(3)
+                    time.sleep(rand_time(mode=1)) 
                     all_th_td_pairs = {}  # Initialize an empty dictionary to store all key-value pairs
                     th_td_pairs = {}  # Initialize an empty dictionary for the current grid
 
@@ -203,7 +233,11 @@ def GetSpecifications():
 
                     print(all_th_td_pairs)
                     print(th_td_pairs)
-                    UNSUCCESSFUL = False
+                    if not all_th_td_pairs:
+                        print("Dictionary Empty! Trying Again ... ")
+                        continue
+                    else:
+                        UNSUCCESSFUL = False
                         # for th_tag, td_tag in zip(th_tags, td_tags):
                         #     th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
                         #     td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
@@ -214,10 +248,11 @@ def GetSpecifications():
                         #     for p in td_p_tags:
                         #         print(p.text)
                 except Exception as e:
-                    print("ERROR:", e)
+                    # print("ERROR:", e)
                     print("ERROR -- REFRESHING")
                     driver.refresh()
-                    time.sleep(5)
+                    time.sleep(rand_time(mode=3))
+                    print("CONTINUING...")
                     # element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
                     # element.click()
                     # time.sleep(3)
