@@ -235,42 +235,16 @@ def GetSpecifications():
                     print(th_td_pairs)
                     if not all_th_td_pairs:
                         print("Dictionary Empty! Trying Again ... ")
+                        driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   # Scroll down
                         continue
                     else:
                         UNSUCCESSFUL = False
-                        # for th_tag, td_tag in zip(th_tags, td_tags):
-                        #     th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
-                        #     td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
-                            
-                        #     for p in th_p_tags:
-                        #         print(p.text, '\t')
-                            
-                        #     for p in td_p_tags:
-                        #         print(p.text)
                 except Exception as e:
                     # print("ERROR:", e)
                     print("ERROR -- REFRESHING")
                     driver.refresh()
                     time.sleep(rand_time(mode=3))
                     print("CONTINUING...")
-                    # element = driver.find_element(By.XPATH, "//*[@id='product-section-key-feat']")
-                    # element.click()
-                    # time.sleep(3)
-                    # grids = element.find_elements(By.TAG_NAME, "table")
-                    # print("Grid Length", len(grids))
-                    # for grid in grids:
-                    #     th_tags = grid.find_elements(By.TAG_NAME, "th")
-                    #     td_tags = grid.find_elements(By.TAG_NAME, "td")
-
-                    #     for th_tag, td_tag in zip(th_tags, td_tags):
-                    #         th_p_tags = th_tag.find_elements(By.TAG_NAME, "p")
-                    #         td_p_tags = td_tag.find_elements(By.TAG_NAME, "p")
-
-                    #     th_texts = [p.text for p in th_p_tags]
-                    #     td_texts = [p.text for p in td_p_tags]
-                    #     print(th_texts, '\n', td_texts)
-                    #     th_td_pairs = dict(zip(th_texts, td_texts))
-                    #     print(th_td_pairs)
 
 if __name__ == '__main__':
     # GetAllProductURLS()
