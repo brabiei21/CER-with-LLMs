@@ -193,8 +193,23 @@ def GetSpecifications():
         driver.execute_cdp_cmd("Network.setUserAgentOverride", {"userAgent": useragentarray[i]}) 
         print(driver.execute_script("return navigator.userAgent;")) 
 
-    for group_of_products in links:
-        for product in group_of_products:
+    # TODO: group_index and product index memory
+    """
+    if os.path.exists('links_mem.txt'):
+        # Read the existing content from the file
+        with open('links_mem.txt', 'r') as f:
+            content = f.readlines()
+        if len(content) > 0 and content[-1] != None:
+            CURRENT_PAGE = content[-1]
+            print('[NOTICE] Continuing from the following page:', CURRENT_PAGE)
+        else:
+            print('[WARNING] nothing in memory, getting links from the very beginning')
+    else:
+        print('[WARNING] nothing in memory, getting links from the very beginning')
+    """
+
+    for group_index, group_of_products in enumerate(links):
+        for product_index, product in enumerate(group_of_products):
             link = product[-1] # get last element in link tuple (href link)
             print(link)
             driver.get(link)
@@ -238,6 +253,28 @@ def GetSpecifications():
                         driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   # Scroll down
                         continue
                     else:
+                        if os.path.exists("specifications.json"):
+                            # Read the existing content from the file
+                            with open("specifications.json", 'r') as f:
+                                content = f.read()
+                            if not len(content) > 0:
+                                content = '[]'
+                        else:
+                            content = '[]'  # Initialize with an empty list if the file doesn't exist
+                        # Load existing JSON content into a Python list
+                        data = json.loads(content)
+
+                        # Append the new JSON object to the existing list
+                        data.append(all_th_td_pairs)
+
+                        with open('specifications.json', 'w') as f:
+                            json.dump(data, f)
+
+                        # TODO: Update index memory here
+                        """
+                        FIX MEEEEEEEEEEE!!!!!!!! RRRRRREEEEEEEEEEEEE
+                        """
+
                         UNSUCCESSFUL = False
                 except Exception as e:
                     # print("ERROR:", e)
