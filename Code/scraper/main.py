@@ -194,22 +194,30 @@ def GetSpecifications():
         print(driver.execute_script("return navigator.userAgent;")) 
 
     # TODO: group_index and product index memory
-    """
-    if os.path.exists('links_mem.txt'):
+    # """
+    MEM_GROUP_INDEX = 0
+    MEM_PRODUCT_INDEX = 0
+    if os.path.exists('product_page_mem.txt'):
         # Read the existing content from the file
-        with open('links_mem.txt', 'r') as f:
+        with open('product_page_mem.txt', 'r') as f:
             content = f.readlines()
         if len(content) > 0 and content[-1] != None:
-            CURRENT_PAGE = content[-1]
-            print('[NOTICE] Continuing from the following page:', CURRENT_PAGE)
+            MEM_GROUP_INDEX = int(content[0])
+            MEM_PRODUCT_INDEX = int(content[1])
+            print('[NOTICE] Continuing from Group Index:', MEM_GROUP_INDEX, 'At Product Index:', MEM_PRODUCT_INDEX)
         else:
-            print('[WARNING] nothing in memory, getting links from the very beginning')
+            print('[WARNING] nothing in memory, getting product index info from the very beginning')
     else:
-        print('[WARNING] nothing in memory, getting links from the very beginning')
-    """
+        print('[WARNING] nothing in memory, getting product index info from the very beginning')
+    # """
 
-    for group_index, group_of_products in enumerate(links):
-        for product_index, product in enumerate(group_of_products):
+    FIRST_ITERATION = True
+    MAX_CONTINUES = 10
+    CONTINUE_COUNT = 0
+    for group_index, group_of_products in enumerate(links[MEM_GROUP_INDEX:] if FIRST_ITERATION else links):
+        for product_index, product in enumerate(group_of_products[MEM_PRODUCT_INDEX:] if FIRST_ITERATION else group_of_products):
+
+            print(product)
             link = product[-1] # get last element in link tuple (href link)
             print(link)
             driver.get(link)
@@ -249,8 +257,18 @@ def GetSpecifications():
                     print(all_th_td_pairs)
                     print(th_td_pairs)
                     if not all_th_td_pairs:
+                        
                         print("Dictionary Empty! Trying Again ... ")
+                        
+                        if CONTINUE_COUNT >= MAX_CONTINUES:
+                            print("REFRESHING...")
+                            CONTINUE_COUNT = 0
+                            driver.refresh()
+                            continue
+                        
                         driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   # Scroll down
+                        CONTINUE_COUNT += 1
+                        
                         continue
                     else:
                         if os.path.exists("specifications.json"):
@@ -274,6 +292,11 @@ def GetSpecifications():
                         """
                         FIX MEEEEEEEEEEE!!!!!!!! RRRRRREEEEEEEEEEEEE
                         """
+                        with open('product_page_mem.txt', 'w') as f:
+                            if FIRST_ITERATION:
+                                f.write(str(group_index + MEM_GROUP_INDEX) + '\n' + str(product_index + MEM_PRODUCT_INDEX) + '\n')
+                            else:
+                                f.write(str(group_index) + '\n' + str(product_index) + '\n')
 
                         UNSUCCESSFUL = False
                 except Exception as e:
@@ -282,6 +305,7 @@ def GetSpecifications():
                     driver.refresh()
                     time.sleep(rand_time(mode=3))
                     print("CONTINUING...")
+        FIRST_ITERATION = False if FIRST_ITERATION else FIRST_ITERATION # turn off flag
 
 if __name__ == '__main__':
     # GetAllProductURLS()
