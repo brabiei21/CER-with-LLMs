@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver import ActionChains
 from concurrent.futures import ThreadPoolExecutor
 import time
 import json
@@ -47,6 +48,60 @@ def _OutputHTML(driver):
             html_content = element.get_attribute("outerHTML")
             # Write the HTML content to the file
             f.write(html_content + "\n")
+
+"""
+Get's 'shop all' links by department
+"""
+def GetDepartmentURLS():
+    PAGE = "https://www.homedepot.com/"
+
+    # Launch a headless Chrome browser
+    options = webdriver.ChromeOptions()
+    # options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options)
+
+    # Navigate to the webpage
+    driver.get(PAGE)
+
+    wait = WebDriverWait(driver, 10)
+
+    # Locate the button using its data-testid attribute
+    shop_all_btn = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="header-button-Shop All"]')))
+    shop_all_btn.click()
+
+    # Wait for the "Shop By Department" button to become clickable
+    shop_by_dept_btn = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="menu-item-id-1BDh5E1pOmmWNMc7CHdLxj"]')))
+    shop_by_dept_btn.click()
+
+    # Locate the container holding the department buttons
+    dept_btn_container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.sui-flex-auto.sui-overflow-y-auto.sui-bg-primary')))
+    # Find all buttons within the container
+    dept_btns = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[role="button"]')))
+
+    # Click each button
+    urls = []
+    num_of_buttons = len(dept_btns)
+    for i in range(num_of_buttons):
+        # button.click()
+        container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.sui-flex-auto.sui-overflow-y-auto.sui-bg-primary')))
+        btn = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[role="button"]')))
+        btn[i].click()
+        container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.sui-flex-auto.sui-overflow-y-auto.sui-bg-primary')))
+        
+        # ensure buttons are loaded
+        while True:
+            btns = container.find_element(By.TAG_NAME, 'ul').find_elements(By.XPATH, './/*') # get child elements of unordered list
+            if len(btns) > 0: break
+        
+        # print(len(btns))
+        urls.append(btns[0].get_attribute("href"))
+        back_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@aria-label='Click to go back and render previous drawer menus']")))
+        back_btn.click()
+        rand_time()
+        # print(urls)
+
+    print(urls)
+
 
 def GetAllProductURLS():
     
@@ -130,15 +185,36 @@ def GetAllProductURLS():
             json.dump(data, f)
 
         # Move to next page of the product page
-        a_tags = driver.find_elements(By.CSS_SELECTOR, "a[class='hd-pagination__link ']")
-        # FIXME: check if it loops arounds
-        if a_tags[-1].get_attribute("aria-label") == None or a_tags[-1].get_attribute("aria-label") != "Next":
-            REACHED_END = True
-        else:
-            CURRENT_PAGE = a_tags[-1].get_attribute("href")
+        nav_tag = driver.find_element(By.CSS_SELECTOR, "nav[aria-label='Pagination Navigation']")
+        li_tags = nav_tag.find_elements(By.TAG_NAME, "button")
+        print(len(li_tags))
+        if li_tags[-1].is_enabled():
+            print(li_tags[-1].get_attribute("aria-label"))
+            print("Current Page:", driver.current_url)
+            # ActionChains(driver).click(li_tags[-1]).perform()
+            elem = li_tags[-1]
+
+            # Use JavaScript to click
+            driver.execute_script("arguments[0].click();", elem)
+
+            elem.click()
+            rand_time(mode=2)
+            CURRENT_PAGE = driver.current_url
+            print("Moving to New Page:", CURRENT_PAGE)
             with open('links_mem.txt', 'a') as f:
                 f.write(str(CURRENT_PAGE+'\n'))
-            driver.get(CURRENT_PAGE)
+            # driver.get(CURRENT_PAGE)
+        else:
+            REACHED_END = True
+
+        # FIXME: check if it loops arounds
+        # if a_tags[-1].get_attribute("aria-label") == None or a_tags[-1].get_attribute("aria-label") != "Next":
+        #     REACHED_END = True
+        # else:
+        #     CURRENT_PAGE = a_tags[-1].get_attribute("href")
+        #     with open('links_mem.txt', 'a') as f:
+        #         f.write(str(CURRENT_PAGE+'\n'))
+        #     driver.get(CURRENT_PAGE)
 
     # Close the browser
     driver.quit()
@@ -308,6 +384,7 @@ def GetSpecifications():
         FIRST_ITERATION = False if FIRST_ITERATION else FIRST_ITERATION # turn off flag
 
 if __name__ == '__main__':
+    GetDepartmentURLS()
     # GetAllProductURLS()
     # for each link, get specifications
-    GetSpecifications()
+    # GetSpecifications()
