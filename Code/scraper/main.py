@@ -103,12 +103,12 @@ def GetDepartmentURLS():
     print(urls)
     return urls
 
-def GetDataComponents():
-    PAGE = "https://www.homedepot.com/b/Appliances/N-5yc1vZbv1w"
+def GetDataComponents(page):
+    PAGE = page
 
     # Launch a headless Chrome browser
     options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
 
     # Navigate to the webpage
@@ -409,7 +409,13 @@ def GetSpecifications():
 
 if __name__ == '__main__':
     # GetDepartmentURLS()
-    GetDataComponents()
+    # GetDataComponents()
+
+    deps = GetDepartmentURLS()
+    for dep in deps:
+        print("\n\nCURRENT DEPARTMENT LINK:\n", dep, "\n\n\n")
+        print(GetDataComponents(dep))
+
     # GetAllProductURLS()
     # for each link, get specifications
     # GetSpecifications()
