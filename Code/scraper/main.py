@@ -57,7 +57,7 @@ def GetDepartmentURLS():
 
     # Launch a headless Chrome browser
     options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
 
     # Navigate to the webpage
@@ -101,7 +101,31 @@ def GetDepartmentURLS():
         # print(urls)
 
     print(urls)
+    return urls
 
+def GetDataComponents():
+    PAGE = "https://www.homedepot.com/b/Appliances/N-5yc1vZbv1w"
+
+    # Launch a headless Chrome browser
+    options = webdriver.ChromeOptions()
+    # options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options)
+
+    # Navigate to the webpage
+    driver.get(PAGE)
+    driver.execute_script("document.body.style.zoom='25%'")
+
+    wait = WebDriverWait(driver, 10)
+    item_container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-component-name="VisualNavigation"]')))
+    items = item_container.find_elements(By.TAG_NAME, 'a')
+
+    urls = []
+    for item in items:
+        url = item.get_attribute('href')
+        urls.append(url)
+        # print(url)
+    
+    return urls
 
 def GetAllProductURLS():
     
@@ -384,7 +408,8 @@ def GetSpecifications():
         FIRST_ITERATION = False if FIRST_ITERATION else FIRST_ITERATION # turn off flag
 
 if __name__ == '__main__':
-    GetDepartmentURLS()
+    # GetDepartmentURLS()
+    GetDataComponents()
     # GetAllProductURLS()
     # for each link, get specifications
     # GetSpecifications()
