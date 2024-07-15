@@ -327,38 +327,42 @@ def _GetProductURLS(page):
 
     wait = WebDriverWait(driver, 10)
     
-    # try:
-    urls = []
-    i = 1
-    while True:
-        # product_grid_container_div = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[class="grid"]')))
-        # products_a = product_grid_container_div.find_elements(By.TAG_NAME, "a")
-        product_divs = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[data-component^="product-pod:ProductPod:"]')))
-        # len(product_divs)
-        # products_a = product_divs.find_elements(By.TAG_NAME, "a")
+    try:
+        urls = []
+        i = 1
+        seen_all_products = False
+        while not seen_all_products:
+            product_divs = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[data-component^="product-pod:ProductPod:"]')))
+            
+            for prod in product_divs:
+                url = prod.find_element(By.TAG_NAME, "a").get_attribute('href')
+                urls.append(url)
+            
+            pagination_lis = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li[class=hd-pagination__item]')))
+            next_page_found = False
+            for li in pagination_lis:
+                if li.text != '...' and int(li.text) > i:
+                    # next_page = 
+                    btn = li.find_element(By.TAG_NAME, 'a')
+                    driver.execute_script("arguments[0].click();", btn)
+                    time.sleep(3)
+                    wait = WebDriverWait(driver, 10)
+                    # btn.click()#.get_attribute('href')
+                    i += 1
+                    # driver.get(next_page)
+                    next_page_found = True
+                    break # end for-loop
+
+            if not next_page_found:
+                seen_all_products = True  # All pages have been seen
         
-        for prod in product_divs:
-            url = prod.find_element(By.TAG_NAME, "a").get_attribute('href')
-            urls.append(url)
+        print("\n\n(i, len(urls))", i, len(urls), "\n\n")
+        # print(urls)
         
-        pagination_lis = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li[class=hd-pagination__item]')))
-        for li in pagination_lis:
-            if li.text != '...' and int(li.text) > i:
-                # next_page = 
-                li.click() #find_element(By.TAG_NAME, 'a').click()#.get_attribute('href')
-                i += 1
-                # driver.get(next_page)
-                break # end for-loop
-                
-        break # has gone through all product listings for this page
-    
-    print("\n\n(i, len(urls))", i, len(urls), "\n\n")
-    print(urls)
-    
-    return urls
-    # except:
-    #     print("WARNING: Page Does Not Have Product Grid.\n", page, "\nSkipping...\n")
-    #     return None
+        return urls
+    except:
+        print("WARNING: Page Does Not Have Product Grid.\n", page, "\nSkipping...\n")
+        return None
 
 def GetAllProductURLS():
     
@@ -641,7 +645,7 @@ def GetSpecifications():
         FIRST_ITERATION = False if FIRST_ITERATION else FIRST_ITERATION # turn off flag
 
 if __name__ == '__main__':
-    _GetProductURLS('https://www.homedepot.com/b/Appliances-Microwaves/N-5yc1vZc3ok')
+    # _GetProductURLS('https://www.homedepot.com/b/Appliances-Microwaves/N-5yc1vZc3ok')
     # GET DEPARTMENT URLS
     if file_exists(DEPT_JSON):
         deps = read_json_as_list(DEPT_JSON)
@@ -669,22 +673,17 @@ if __name__ == '__main__':
             prod_urls = GetDataComponents(dep)
             print(prod_urls)
             append_list_to_json(prod_urls, 'prod_grid.json')
-            # product_grid_urls.append(prod_urls)
         
-        # write_list_to_json(product_grid_urls, 'prod_grid.json')
         write_string_to_file('', 'last_dept.txt')
         product_grid_urls = read_json_as_list('prod_grid.json')
-        
-    # product_grid_urls = [] # note this will be a 2D list
-    # for dep in deps:
-    #     print("\n\nCURRENT DEPARTMENT LINK:\n", dep, "\n\n\n")
-    #     prod_urls = GetDataComponents(dep)
-    #     print(prod_urls)
-    #     product_grid_urls.append(prod_urls)
+    
+    
+    
+    # GET PRODUCT URLS FROM LISTINGS
     
     for link in product_grid_urls:
-        _GetProductURLS(link)
-
-    # GetAllProductURLS()
-    # for each link, get specifications
-    # GetSpecifications()
+        write_string_to_file(link, 'last_link.txt')
+        product_links = _GetProductURLS(link)
+        if product_links != None:
+            append_list_to_json(product_links, 'links.json')
+    write_string_to_file('', 'last_link.txt')
