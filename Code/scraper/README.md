@@ -1,6 +1,7 @@
 # SETUP
+Using Python 3.10
 ```shell
-# install pip is local enviornment does not have it
+# install pip if local enviornment does not have it, otherwise skip to next step
 python3 -m ensurepip --upgrade
 
 # install virtual enviornment package and create enviornment
@@ -21,6 +22,13 @@ pip list
 # to deactiviate when no longer working on scraper
 deactivate
 ```
+
+By default, Selenium 4 is compatible with Chrome v75 and greater. Note that the version of the Chrome browser and the version of chromedriver must match the major version.
+Drivers can be found here: https://chromedriver.storage.googleapis.com/index.html
+However, you really just need Chrome to be installed:
+https://www.google.com/chrome/?platform=mac
+https://www.google.com/chrome/?platform=linux
+https://www.google.com/chrome/?platform=windows
 
 # RUNNING
 ```shell

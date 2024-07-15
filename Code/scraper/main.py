@@ -10,6 +10,129 @@ import json
 import os
 import random
 
+DEPT_JSON = 'department_urls.json'
+
+def file_exists(filename):
+    """
+    Checks if a file with the given filename exists.
+
+    Parameters:
+    filename (str): The name of the file to check.
+
+    Returns:
+    bool: True if the file exists, False otherwise.
+    """
+    return os.path.isfile(filename)
+
+def write_list_to_json(data_list, filename):
+    """
+    Writes a list to a JSON file with the given filename.
+
+    Parameters:
+    data_list (list): The list to write to the JSON file.
+    filename (str): The name of the JSON file.
+    """
+    try:
+        with open(filename, 'w') as json_file:
+            json.dump(data_list, json_file)
+        print(f"Data successfully written to {filename}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+def append_list_to_json(data_list, filename):
+    """
+    Appends a list to a JSON file. If the file does not exist or is empty, it creates the file and writes the list.
+
+    Parameters:
+    data_list (list): The list to append to the JSON file.
+    filename (str): The name of the JSON file.
+    """
+    try:
+        if os.path.isfile(filename) and os.path.getsize(filename) > 0:
+            with open(filename, 'r') as json_file:
+                existing_data = json.load(json_file)
+                if not isinstance(existing_data, list):
+                    raise ValueError(f"The existing data in '{filename}' is not a list.")
+                existing_data.extend(data_list)
+        else:
+            existing_data = data_list
+
+        with open(filename, 'w') as json_file:
+            json.dump(existing_data, json_file, indent=4)
+        
+        print(f"Data successfully appended to {filename}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        
+def read_json_as_list(filename):
+    """
+    Reads the contents of a JSON file and returns it as a list.
+
+    Parameters:
+    filename (str): The name of the JSON file to read.
+
+    Returns:
+    list: The contents of the JSON file as a list.
+    """
+    try:
+        with open(filename, 'r') as json_file:
+            data_list = json.load(json_file)
+        return data_list
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return [] 
+       
+def write_string_to_file(content, filename):
+    """
+    Writes a string to a text file.
+
+    Parameters:
+    content (str): The string content to write to the file.
+    filename (str): The name of the text file to write.
+    """
+    try:
+        with open(filename, 'w') as file:
+            file.write(content)
+        print(f"String content successfully written to {filename}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+def read_string_from_file(filename):
+    """
+    Reads the contents of a text file and returns it as a string.
+
+    Parameters:
+    filename (str): The name of the text file to read.
+
+    Returns:
+    str: The contents of the text file.
+    """
+    try:
+        with open(filename, 'r') as file:
+            content = file.read()
+        return content
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+def is_file_empty(filename):
+    """
+    Checks if a file is empty.
+
+    Parameters:
+    filename (str): The name of the file to check.
+
+    Returns:
+    bool: True if the file is empty, False otherwise.
+    """
+    try:
+        if os.path.isfile(filename):
+            return os.path.getsize(filename) == 0
+        else:
+            raise FileNotFoundError(f"The file '{filename}' does not exist.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return False
+
 def rand_time(A=0, B=0, mode=1):
     """
     Returns a random number between A and B (inclusive) based on the mode.
@@ -50,14 +173,24 @@ def _OutputHTML(driver):
             f.write(html_content + "\n")
 
 """
-Get's 'shop all' links by department
+Get 'shop all' links by department
 """
 def GetDepartmentURLS():
     PAGE = "https://www.homedepot.com/"
 
     # Launch a headless Chrome browser
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
+    # options.add_argument("user-data-dir=/home/${USER}/.config/google-chrome/Default")
+
+    # Adding argument to disable the AutomationControlled flag 
+    options.add_argument("--disable-blink-features=AutomationControlled") 
+    
+    # Exclude the collection of enable-automation switches 
+    options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
+    
+    # Turn-off userAutomationExtension 
+    options.add_experimental_option("useAutomationExtension", False)
     driver = webdriver.Chrome(options=options)
 
     # Navigate to the webpage
@@ -103,12 +236,30 @@ def GetDepartmentURLS():
     print(urls)
     return urls
 
+"""
+Gets the links for product pages 
+
+Parameters:
+page (string) 'shop all' department page
+
+Returns:
+list: urls of data components for a department page
+"""
 def GetDataComponents(page):
     PAGE = page
 
     # Launch a headless Chrome browser
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
+    # options.add_argument("user-data-dir=/home/${USER}/.config/google-chrome/Default")
+    # Adding argument to disable the AutomationControlled flag 
+    options.add_argument("--disable-blink-features=AutomationControlled") 
+    
+    # Exclude the collection of enable-automation switches 
+    options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
+    
+    # Turn-off userAutomationExtension 
+    options.add_experimental_option("useAutomationExtension", False)
     driver = webdriver.Chrome(options=options)
 
     # Navigate to the webpage
@@ -116,9 +267,37 @@ def GetDataComponents(page):
     driver.execute_script("document.body.style.zoom='25%'")
 
     wait = WebDriverWait(driver, 10)
-    item_container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-component-name="VisualNavigation"]')))
-    items = item_container.find_elements(By.TAG_NAME, 'a')
+    try:
+        placeholder_elements = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[class*="placeholder"]')))
+        # Once the placeholder is found, wait for it to disappear
+        for elem in placeholder_elements:
+            wait.until(EC.staleness_of(elem))
+    except:
+        driver.get(page)
+        reached_page_end = False
+        last_height = driver.execute_script("return document.body.scrollHeight")
 
+        while not reached_page_end:
+            driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   
+            time.sleep(2)
+            new_height = driver.execute_script("return document.body.scrollHeight")
+            if last_height == new_height:
+                    reached_page_end = True
+            else:
+                    last_height = new_height
+        driver.execute_script("document.body.style.zoom='25%'")
+            
+    try:
+        item_container = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-component-name="VisualNavigation"]')))
+        items = item_container.find_elements(By.TAG_NAME, 'a')
+    except:
+        try:
+            side_nav_div = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-component-name="SideNavigation"]')))
+            items = side_nav_div.find_elements(By.TAG_NAME, 'a')
+        except:
+            print("WARNING: COULD NOT FIND LINKS FOR PAGE\n", page)
+            return []
+    
     urls = []
     for item in items:
         url = item.get_attribute('href')
@@ -126,6 +305,60 @@ def GetDataComponents(page):
         # print(url)
     
     return urls
+
+def _GetProductURLS(page):
+    # Launch a headless Chrome browser
+    options = webdriver.ChromeOptions()
+    # options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options)
+    
+    driver.get(page)
+    reached_page_end = False
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    while not reached_page_end:
+        driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   
+        time.sleep(2)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if last_height == new_height:
+                reached_page_end = True
+        else:
+                last_height = new_height
+    driver.execute_script("document.body.style.zoom='25%'")
+
+    wait = WebDriverWait(driver, 10)
+    
+    # try:
+    urls = []
+    i = 1
+    while True:
+        # product_grid_container_div = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[class="grid"]')))
+        # products_a = product_grid_container_div.find_elements(By.TAG_NAME, "a")
+        product_divs = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[data-component^="product-pod:ProductPod:"]')))
+        # len(product_divs)
+        # products_a = product_divs.find_elements(By.TAG_NAME, "a")
+        
+        for prod in product_divs:
+            url = prod.find_element(By.TAG_NAME, "a").get_attribute('href')
+            urls.append(url)
+        
+        pagination_lis = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li[class=hd-pagination__item]')))
+        for li in pagination_lis:
+            if li.text != '...' and int(li.text) > i:
+                # next_page = 
+                li.click() #find_element(By.TAG_NAME, 'a').click()#.get_attribute('href')
+                i += 1
+                # driver.get(next_page)
+                break # end for-loop
+                
+        break # has gone through all product listings for this page
+    
+    print("\n\n(i, len(urls))", i, len(urls), "\n\n")
+    print(urls)
+    
+    return urls
+    # except:
+    #     print("WARNING: Page Does Not Have Product Grid.\n", page, "\nSkipping...\n")
+    #     return None
 
 def GetAllProductURLS():
     
@@ -408,13 +641,49 @@ def GetSpecifications():
         FIRST_ITERATION = False if FIRST_ITERATION else FIRST_ITERATION # turn off flag
 
 if __name__ == '__main__':
-    # GetDepartmentURLS()
-    # GetDataComponents()
-
-    deps = GetDepartmentURLS()
-    for dep in deps:
-        print("\n\nCURRENT DEPARTMENT LINK:\n", dep, "\n\n\n")
-        print(GetDataComponents(dep))
+    _GetProductURLS('https://www.homedepot.com/b/Appliances-Microwaves/N-5yc1vZc3ok')
+    # GET DEPARTMENT URLS
+    if file_exists(DEPT_JSON):
+        deps = read_json_as_list(DEPT_JSON)
+    else: 
+        deps = GetDepartmentURLS()
+        write_list_to_json(deps, DEPT_JSON)
+    
+    
+    
+    # GET PRODUCT LISTING URLS FROM DEPARTMENTS
+    if file_exists('last_dept.txt') and is_file_empty('last_dept.txt'):
+        product_grid_urls = read_json_as_list('prod_grid.json')
+    else:
+        last_dept = read_string_from_file('last_dept.txt')
+        skip = True if last_dept != None else False
+        
+        # product_grid_urls = [] # note this will be a 2D list
+        
+        for dep in deps:
+            if dep == last_dept: skip = False
+            if skip: continue
+            
+            write_string_to_file(dep, 'last_dept.txt')
+            print("\n\nCURRENT DEPARTMENT LINK:\n", dep, "\n\n\n")
+            prod_urls = GetDataComponents(dep)
+            print(prod_urls)
+            append_list_to_json(prod_urls, 'prod_grid.json')
+            # product_grid_urls.append(prod_urls)
+        
+        # write_list_to_json(product_grid_urls, 'prod_grid.json')
+        write_string_to_file('', 'last_dept.txt')
+        product_grid_urls = read_json_as_list('prod_grid.json')
+        
+    # product_grid_urls = [] # note this will be a 2D list
+    # for dep in deps:
+    #     print("\n\nCURRENT DEPARTMENT LINK:\n", dep, "\n\n\n")
+    #     prod_urls = GetDataComponents(dep)
+    #     print(prod_urls)
+    #     product_grid_urls.append(prod_urls)
+    
+    for link in product_grid_urls:
+        _GetProductURLS(link)
 
     # GetAllProductURLS()
     # for each link, get specifications
