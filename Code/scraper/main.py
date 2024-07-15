@@ -680,10 +680,14 @@ if __name__ == '__main__':
     
     
     # GET PRODUCT URLS FROM LISTINGS
-    
+    last_grid_url = read_string_from_file('last_grid_url.txt')
+    skip = True if last_grid_url != None else False
     for link in product_grid_urls:
-        write_string_to_file(link, 'last_link.txt')
+        if link == last_grid_url: skip = False
+        if skip: continue
+        
+        write_string_to_file(link, 'last_grid_url.txt')
         product_links = _GetProductURLS(link)
         if product_links != None:
             append_list_to_json(product_links, 'links.json')
-    write_string_to_file('', 'last_link.txt')
+    write_string_to_file('', 'last_grid_url.txt')
