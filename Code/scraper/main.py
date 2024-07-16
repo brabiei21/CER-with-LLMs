@@ -391,39 +391,45 @@ def _GetSpecifications(page):
         else:
                 last_height = new_height
     driver.execute_script("document.body.style.zoom='25%'")
+    time.sleep(3)
     
     wait = WebDriverWait(driver, 10)
     
     specification_accordion = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[id="product-section-key-feat"]')))
-    # specification_accordion.click()
-    
-    # specification_accordion_content = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-component="SpecificationsAccordionBody"]')))
-    # specification_content_divs = specification_accordion_content.find_elements(By.TAG_NAME, "div")
-    
-    specification_content_divs = specification_accordion.find_elements(By.CSS_SELECTOR, 'div[class="sui-flex sui-flex-wrap sui-w-full"]')
+    btn = specification_accordion.find_element(By.CSS_SELECTOR, 'div[role="button"]')
+    driver.execute_script("arguments[0].click();", btn)
+    time.sleep(3)
+        
+    table_headers = specification_accordion.find_elements(By.TAG_NAME, 'h4')
+    # print(len(table_headers))
+    content_tables = specification_accordion.find_elements(By.TAG_NAME, 'table')
     
     specifications = []
-    for subcontent in specification_content_divs:
+    length = len(content_tables)
+    # print("Length:", length)
+    for i in range(length):
         try:
-            content_title = subcontent.find_element(By.TAG_NAME, 'div').text
-        except Exception as e:
-            print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-            print("Error: unable to get content title.\n\n", e, "\n\n")
-            print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-            
-        try:
-            rows = subcontent.find_elements(By.TAG_NAME, 'tr')
+            title = table_headers[i].get_attribute('innerHTML').strip()
+            # print("TITLE:", title)
+            rows = content_tables[i].find_elements(By.TAG_NAME, 'tr')
+            # print("Number of Rows: ", len(rows))
+            content = []
             for row in rows:
-                headers = row.find_elements(By.ID, "th")
-                descriptions = row.find_elements(By.ID, "td")
-                content_dictionary = dict((obj1.text, obj2.text) for obj1, obj2 in zip(headers, descriptions))
+                headers = row.find_elements(By.TAG_NAME, "th")
+                descriptions = row.find_elements(By.TAG_NAME, "td")
+                content_dictionary = dict((obj1.find_element(By.TAG_NAME, 'p').get_attribute('innerHTML').strip(), obj2.find_element(By.TAG_NAME, 'p').get_attribute('innerHTML').strip()) for obj1, obj2 in zip(headers, descriptions))
+                content.append(content_dictionary)
+            specifications.append((title, content))
+            # print(content)
         except Exception as e:
             print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-            print("Error: unable to get content table.\n\n", e, "\n\n")
-            print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-        specifications.append((content_title, content_dictionary))
+            print("Error: .\n\n", e, "\n\n")
+            print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")       
     
-    
+    # print(specifications)
+    product_title = driver.find_element(By.CSS_SELECTOR, 'span[data-component="ProductDetailsTitle"]').find_element(By.TAG_NAME, 'h1').get_attribute('innerHTML').strip()
+    specifications.append(('product', product_title))
+    # print(product_title)
     return specifications
 
 def GetAllProductURLS():
@@ -760,8 +766,11 @@ if __name__ == '__main__':
         if product == last_product_url: skip = False
         if skip: continue
         
+        print("CURRENT PRODUCT:", product)
         specifications = _GetSpecifications(product)
         if len(specifications) > 0:
             append_list_to_json(specifications, 'product_specifications.json')
+        else:
+            print("Empty Specifications, Skipping...")
         write_string_to_file(product, 'last_product_url.txt')
     write_string_to_file('', 'last_product_url.txt')
