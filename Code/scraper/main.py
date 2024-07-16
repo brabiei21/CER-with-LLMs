@@ -363,6 +363,68 @@ def _GetProductURLS(page):
     except:
         print("WARNING: Page Does Not Have Product Grid.\n", page, "\nSkipping...\n")
         return None
+def _GetSpecifications(page):
+    # Launch a headless Chrome browser
+    options = webdriver.ChromeOptions()
+    # options.add_argument('--headless')
+    # options.add_argument("user-data-dir=/home/${USER}/.config/google-chrome/Default")
+    # Adding argument to disable the AutomationControlled flag 
+    options.add_argument("--disable-blink-features=AutomationControlled") 
+    
+    # Exclude the collection of enable-automation switches 
+    options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
+    
+    # Turn-off userAutomationExtension 
+    options.add_experimental_option("useAutomationExtension", False)
+    driver = webdriver.Chrome(options=options)
+
+    # Navigate to the webpage
+    driver.get(page)
+    reached_page_end = False
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    while not reached_page_end:
+        driver.find_element(By.XPATH, '//body').send_keys(Keys.END)   
+        time.sleep(2)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if last_height == new_height:
+                reached_page_end = True
+        else:
+                last_height = new_height
+    driver.execute_script("document.body.style.zoom='25%'")
+    
+    wait = WebDriverWait(driver, 10)
+    
+    specification_accordion = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[id="product-section-key-feat"]')))
+    # specification_accordion.click()
+    
+    # specification_accordion_content = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-component="SpecificationsAccordionBody"]')))
+    # specification_content_divs = specification_accordion_content.find_elements(By.TAG_NAME, "div")
+    
+    specification_content_divs = specification_accordion.find_elements(By.CSS_SELECTOR, 'div[class="sui-flex sui-flex-wrap sui-w-full"]')
+    
+    specifications = []
+    for subcontent in specification_content_divs:
+        try:
+            content_title = subcontent.find_element(By.TAG_NAME, 'div').text
+        except Exception as e:
+            print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+            print("Error: unable to get content title.\n\n", e, "\n\n")
+            print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+            
+        try:
+            rows = subcontent.find_elements(By.TAG_NAME, 'tr')
+            for row in rows:
+                headers = row.find_elements(By.ID, "th")
+                descriptions = row.find_elements(By.ID, "td")
+                content_dictionary = dict((obj1.text, obj2.text) for obj1, obj2 in zip(headers, descriptions))
+        except Exception as e:
+            print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+            print("Error: unable to get content table.\n\n", e, "\n\n")
+            print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+        specifications.append((content_title, content_dictionary))
+    
+    
+    return specifications
 
 def GetAllProductURLS():
     
@@ -645,7 +707,6 @@ def GetSpecifications():
         FIRST_ITERATION = False if FIRST_ITERATION else FIRST_ITERATION # turn off flag
 
 if __name__ == '__main__':
-    # _GetProductURLS('https://www.homedepot.com/b/Appliances-Microwaves/N-5yc1vZc3ok')
     # GET DEPARTMENT URLS
     if file_exists(DEPT_JSON):
         deps = read_json_as_list(DEPT_JSON)
@@ -661,8 +722,6 @@ if __name__ == '__main__':
     else:
         last_dept = read_string_from_file('last_dept.txt')
         skip = True if last_dept != None else False
-        
-        # product_grid_urls = [] # note this will be a 2D list
         
         for dep in deps:
             if dep == last_dept: skip = False
@@ -691,3 +750,18 @@ if __name__ == '__main__':
         if product_links != None:
             append_list_to_json(product_links, 'links.json')
     write_string_to_file('', 'last_grid_url.txt')
+
+
+    # GET PRODUCT SPECIFICATIONS
+    last_product_url = read_string_from_file('last_product_url.txt')
+    skip = True if last_product_url != None else False
+    product_links = read_json_as_list('links.json')
+    for product in product_links:
+        if product == last_product_url: skip = False
+        if skip: continue
+        
+        specifications = _GetSpecifications(product)
+        if len(specifications) > 0:
+            append_list_to_json(specifications, 'product_specifications.json')
+        write_string_to_file(product, 'last_product_url.txt')
+    write_string_to_file('', 'last_product_url.txt')
