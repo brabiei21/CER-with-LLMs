@@ -476,8 +476,14 @@ def _GetSpecifications(page):
             print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")       
     
     # GET PRODUCT TITLE
-    product_title = driver.find_element(By.CSS_SELECTOR, 'span[data-component="ProductDetailsTitle"]').find_element(By.TAG_NAME, 'h1').get_attribute('innerHTML').strip()
-    specifications.append(('product', product_title))
+    product_title = None
+    while product_title == None:
+        try:
+            product_title = driver.find_element(By.CSS_SELECTOR, 'span[data-component="ProductDetailsTitle"]').find_element(By.TAG_NAME, 'h1').get_attribute('innerHTML').strip()
+            specifications.append(('product', product_title))
+        except Exception as e:
+            driver.refresh()
+            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'span[data-component="ProductDetailsTitle"]')))
     
     # FLATTEN SPECIFICATIONS TO BE A PROPER DICTIONARY
     flattened_dict = {item[0]: item[1] for item in specifications}
@@ -823,10 +829,10 @@ if __name__ == '__main__':
         if skip: continue
         
         print("\nCURRENT PRODUCT:", product, "\n")
+        write_string_to_file(product, 'last_product_url.txt')
         specifications = _GetSpecifications(product)
         if len(specifications) > 0:
             append_dict_to_json(specifications, 'product_specifications.json')
         else:
             print("\nEmpty Specifications, Skipping...\n")
-        write_string_to_file(product, 'last_product_url.txt')
     write_string_to_file('', 'last_product_url.txt')
