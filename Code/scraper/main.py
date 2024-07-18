@@ -64,6 +64,32 @@ def append_list_to_json(data_list, filename):
     except Exception as e:
         print(f"An error occurred: {e}")
         
+
+def append_dict_to_json(data_dict, filename):
+    """
+    Appends a dictionary to a JSON file. If the file does not exist or is empty, it creates the file and writes the dictionary.
+
+    Parameters:
+    data_dict (dict): The dictionary to append to the JSON file.
+    filename (str): The name of the JSON file.
+    """
+    try:
+        if os.path.isfile(filename) and os.path.getsize(filename) > 0:
+            with open(filename, 'r') as json_file:
+                existing_data = json.load(json_file)
+                if not isinstance(existing_data, dict):
+                    raise ValueError(f"The existing data in '{filename}' is not a dictionary.")
+                existing_data.update(data_dict)
+        else:
+            existing_data = data_dict
+
+        with open(filename, 'w') as json_file:
+            json.dump(existing_data, json_file, indent=4)
+        
+        print(f"Data successfully appended to {filename}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        
 def read_json_as_list(filename):
     """
     Reads the contents of a JSON file and returns it as a list.
@@ -799,7 +825,7 @@ if __name__ == '__main__':
         print("\nCURRENT PRODUCT:", product, "\n")
         specifications = _GetSpecifications(product)
         if len(specifications) > 0:
-            append_list_to_json(specifications, 'product_specifications.json')
+            append_dict_to_json(specifications, 'product_specifications.json')
         else:
             print("\nEmpty Specifications, Skipping...\n")
         write_string_to_file(product, 'last_product_url.txt')
