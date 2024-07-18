@@ -392,44 +392,74 @@ def _GetSpecifications(page):
                 last_height = new_height
     driver.execute_script("document.body.style.zoom='25%'")
     time.sleep(3)
-    
     wait = WebDriverWait(driver, 10)
     
-    specification_accordion = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[id="product-section-key-feat"]')))
-    btn = specification_accordion.find_element(By.CSS_SELECTOR, 'div[role="button"]')
-    driver.execute_script("arguments[0].click();", btn)
+    try:
+        specification_accordion = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[id="product-section-key-feat"]')))
+        btn = specification_accordion.find_element(By.CSS_SELECTOR, 'div[role="button"]')
+        driver.execute_script("arguments[0].click();", btn)
+    except Exception as e:
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+        print("Error: Unable to click specification dropdown \n\n", e, "\n\n")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")   
     time.sleep(3)
-        
-    table_headers = specification_accordion.find_elements(By.TAG_NAME, 'h4')
-    # print(len(table_headers))
-    content_tables = specification_accordion.find_elements(By.TAG_NAME, 'table')
+    
+    try:
+        table_headers = specification_accordion.find_elements(By.TAG_NAME, 'h4')
+        content_tables = specification_accordion.find_elements(By.TAG_NAME, 'table')
+    except Exception as e:
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+        print("Error: Unable to get Headers and Tables \n\n", e, "\n\n")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-") 
     
     specifications = []
     length = len(content_tables)
-    # print("Length:", length)
     for i in range(length):
         try:
             title = table_headers[i].get_attribute('innerHTML').strip()
-            # print("TITLE:", title)
             rows = content_tables[i].find_elements(By.TAG_NAME, 'tr')
-            # print("Number of Rows: ", len(rows))
             content = []
             for row in rows:
                 headers = row.find_elements(By.TAG_NAME, "th")
                 descriptions = row.find_elements(By.TAG_NAME, "td")
-                content_dictionary = dict((obj1.find_element(By.TAG_NAME, 'p').get_attribute('innerHTML').strip(), obj2.find_element(By.TAG_NAME, 'p').get_attribute('innerHTML').strip()) for obj1, obj2 in zip(headers, descriptions))
-                content.append(content_dictionary)
-            specifications.append((title, content))
-            # print(content)
+                # Function to check if an element has a class containing "hidden"
+                def has_hidden_class(element):
+                    class_attribute = element.get_attribute("class")
+                    return "hidden" in class_attribute
+
+                # Filter out elements with "hidden" in their class attribute
+                filtered_headers = [header for header in headers if not has_hidden_class(header)]
+                filtered_descriptions = [description for description in descriptions if not has_hidden_class(description)]
+                headers, descriptions= filtered_headers, filtered_descriptions
+                try:
+                    content_dictionary = dict((obj1.find_element(By.TAG_NAME, 'p').get_attribute('innerHTML').strip(), obj2.find_element(By.TAG_NAME, 'p').get_attribute('innerHTML').strip()) for obj1, obj2 in zip(headers, descriptions))
+                    content.append(content_dictionary)
+                except Exception as e:
+                    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+                    print("Error: Creating Dictionary \n\n", e, "\n\n")
+                    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+                    time.sleep(999)
+            
+            # Using dictionary comprehension with unpacking
+            flattened_dict = {key: value for d in content for key, value in d.items()}
+            
+            specifications.append((title, flattened_dict))
         except Exception as e:
             print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-            print("Error: .\n\n", e, "\n\n")
+            print("Error: Within For-Loop\n\n", e, "\n\n")
             print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")       
     
-    # print(specifications)
+    # GET PRODUCT TITLE
     product_title = driver.find_element(By.CSS_SELECTOR, 'span[data-component="ProductDetailsTitle"]').find_element(By.TAG_NAME, 'h1').get_attribute('innerHTML').strip()
     specifications.append(('product', product_title))
-    # print(product_title)
+    
+    # FLATTEN SPECIFICATIONS TO BE A PROPER DICTIONARY
+    flattened_dict = {item[0]: item[1] for item in specifications}
+    l = {}
+    l[product_title] = flattened_dict
+    specifications = l
+    # specifications = (product_title, flattened_dict)
+    
     return specifications
 
 def GetAllProductURLS():
@@ -766,11 +796,11 @@ if __name__ == '__main__':
         if product == last_product_url: skip = False
         if skip: continue
         
-        print("CURRENT PRODUCT:", product)
+        print("\nCURRENT PRODUCT:", product, "\n")
         specifications = _GetSpecifications(product)
         if len(specifications) > 0:
             append_list_to_json(specifications, 'product_specifications.json')
         else:
-            print("Empty Specifications, Skipping...")
+            print("\nEmpty Specifications, Skipping...\n")
         write_string_to_file(product, 'last_product_url.txt')
     write_string_to_file('', 'last_product_url.txt')
