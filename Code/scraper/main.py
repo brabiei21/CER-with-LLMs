@@ -479,11 +479,11 @@ def _GetSpecifications(page):
     product_title = None
     while product_title == None:
         try:
+            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'span[data-component="ProductDetailsTitle"]')))
             product_title = driver.find_element(By.CSS_SELECTOR, 'span[data-component="ProductDetailsTitle"]').find_element(By.TAG_NAME, 'h1').get_attribute('innerHTML').strip()
             specifications.append(('product', product_title))
         except Exception as e:
             driver.refresh()
-            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'span[data-component="ProductDetailsTitle"]')))
     
     # FLATTEN SPECIFICATIONS TO BE A PROPER DICTIONARY
     flattened_dict = {item[0]: item[1] for item in specifications}
