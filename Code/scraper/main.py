@@ -544,15 +544,18 @@ if __name__ == '__main__':
     last_product_url = read_string_from_file('last_product_url.txt')
     skip = True if last_product_url != None else False
     product_links = read_json_as_list('links.json')
+    i, total_links = 0, len(product_links)
     for product in product_links:
+        i+=1
         if product == last_product_url: skip = False
         if skip: continue
         
-        print("\nCURRENT PRODUCT:", product, "\n")
+        print("\n(",i,",",total_links,")CURRENT PRODUCT:", product, "\n")
         write_string_to_file(product, 'last_product_url.txt')
         specifications = _GetSpecifications(product)
         if len(specifications) > 0:
             append_dict_to_json(specifications, 'product_specifications.json')
         else:
             print("\nEmpty Specifications, Skipping...\n")
+        
     write_string_to_file('', 'last_product_url.txt')
