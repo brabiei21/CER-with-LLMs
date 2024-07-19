@@ -897,16 +897,21 @@
     "30 in. Built-In Microwave Drawer with Automatic Presets, Touch Controls and 1.2 cu. ft. Capacity in Stainless Steel": {
         "Dimensions": {
             "Capacity of Microwave (cu. ft.)": "1.2",
+            "Cut-Out Front to Back Depth (in.)": "21.625",
+            "Cut-Out Height (in.)": "15.625",
+            "Cut-Out Left to Right Width (in.)": "21.625",
             "Depth With Door(s) Open 90 Degrees (in.)": "26.08 in",
             "Interior Depth (in.)": "17.52",
             "Interior Height (in.)": "7.88",
             "Interior Width (in.)": "17.28",
             "Product Depth (in.)": "26.08 in",
             "Product Height (in.)": "15.98 in",
-            "Product Width (in.)": "29.92 in"
+            "Product Width (in.)": "29.92 in",
+            "Turntable Width (in.)": "No Turntable"
         },
         "Details": {
             "Appliance Category": "Microwave",
+            "Appliance Series": "Not Applicable",
             "Appliance Type": "Microwave Drawer",
             "Color/Finish": "Stainless Steel",
             "Color/Finish Family": "Stainless Steel",
@@ -930,7 +935,7 @@
         "Warranty / Certifications": {
             "Certifications and Listings": "No Certifications or Listings",
             "Manufacturer Warranty": "1 Year Limited Warranty",
-            "Safety Listing": "No Safety Listings"
+            "Safety Listing": "UL"
         },
         "product": "30 in. Built-In Microwave Drawer with Automatic Presets, Touch Controls and 1.2 cu. ft. Capacity in Stainless Steel"
     },
@@ -1378,6 +1383,43 @@
         "product": "Gallery 1.9 cu. ft. Over the Range Microwave in Smudge-Proof Stainless Steel with Sensor Cooking Technology"
     },
     "1.6 cu. ft. Countertop Microwave in Stainless Steel with Sensor Cooking": {
+        "Dimensions": {
+            "Capacity of Microwave (cu. ft.)": "1.6",
+            "Depth With Door(s) Open 90 Degrees (in.)": "38.5",
+            "Interior Depth (in.)": "16.75",
+            "Interior Height (in.)": "10.25",
+            "Interior Width (in.)": "16.625",
+            "Product Depth (in.)": "17.75",
+            "Product Height (in.)": "12.88",
+            "Product Width (in.)": "21.75",
+            "Turntable Width (in.)": "13 in"
+        },
+        "Details": {
+            "Appliance Category": "Microwave",
+            "Appliance Series": "Not Applicable",
+            "Appliance Type": "Countertop Microwave",
+            "Color/Finish": "Stainless Steel",
+            "Color/Finish Family": "Stainless Steel",
+            "Compatible Trim Kit Model Number": "N/A",
+            "Controls Location": "Side Controls",
+            "Door Swing/Style": "Right to Left Swing",
+            "Interior Light Type": "Incandescent",
+            "Microwave Door Release": "Push Button",
+            "Microwave Features": "One Touch Cooking, Turntable",
+            "Microwave Settings": "Control Lock, Cook Power, Popcorn",
+            "Microwave Size": "Medium",
+            "Number of One-Touch Settings": "6",
+            "Number of Power Levels": "10",
+            "Product Weight (lb.)": "39 lb",
+            "Returnable": "Non-Returnable",
+            "Vent Location": "Top",
+            "Wattage (W)": "1150 W"
+        },
+        "Warranty / Certifications": {
+            "Certifications and Listings": "UL Listed",
+            "Manufacturer Warranty": "Limited 1-year entire appliance warranty",
+            "Safety Listing": "UL"
+        },
         "product": "1.6 cu. ft. Countertop Microwave in Stainless Steel with Sensor Cooking"
     },
     "Profile 2.1 cu. ft. Over the Range Microwave in Stainless Steel with Sensor Cooking": {
@@ -1432,7 +1474,7 @@
         "product": "Profile 2.1 cu. ft. Over the Range Microwave in Stainless Steel with Sensor Cooking"
     },
     "1.9 cu. ft. Over the Range Microwave in Fingerprint Resistant Stainless Steel with Sensor Cooking": {
-        "Dimensions": {
+        "Vent Type": {
             "Capacity of Microwave (cu. ft.)": "1.9",
             "Cut-Out Front to Back Depth (in.)": "12",
             "Cut-Out Height (in.)": "17.13",
@@ -1446,7 +1488,7 @@
             "Product Width (in.)": "29.88 in",
             "Turntable Width (in.)": "12 in"
         },
-        "Details": {
+        "Exhaust Max CFM": {
             "Appliance Category": "Microwave",
             "Appliance Type": "Over the Range Microwave",
             "Color/Finish": "Fingerprint Resistant Stainless Steel",
@@ -1473,7 +1515,7 @@
             "Vent Type": "Convertible",
             "Wattage (W)": "1000 W"
         },
-        "Warranty / Certifications": {
+        "Size": {
             "Certifications and Listings": "UL Listed",
             "Manufacturer Warranty": "1 Year Limited",
             "Safety Listing": "UL"
@@ -1977,7 +2019,7 @@
         "product": "Smart 1.7 cu. ft. Over the Range Convection Microwave Oven with Air Fry in PrintProof Stainless Steel"
     },
     "1.8 cu. ft. Over the Range Microwave in Stainless Steel": {
-        "Vent Type": {
+        "Dimensions": {
             "Capacity of Microwave (cu. ft.)": "1.8",
             "Cut-Out Front to Back Depth (in.)": "18.75",
             "Cut-Out Height (in.)": "19.375",
@@ -1991,7 +2033,7 @@
             "Product Width (in.)": "29.875 in",
             "Turntable Width (in.)": "12 in"
         },
-        "Exhaust Max CFM": {
+        "Details": {
             "Appliance Category": "Microwave",
             "Appliance Series": "Not Applicable",
             "Appliance Type": "Over the Range Microwave",
@@ -2019,7 +2061,7 @@
             "Vent Type": "Convertible",
             "Wattage (W)": "1000 W"
         },
-        "Size": {
+        "Warranty / Certifications": {
             "Certifications and Listings": "UL Listed, cUL Listed",
             "Manufacturer Warranty": "1 Year Limited Parts &amp; Labor",
             "Safety Listing": "UL"
@@ -2027,7 +2069,7 @@
         "product": "1.8 cu. ft. Over the Range Microwave in Stainless Steel"
     },
     "1.6 cu. ft. Over-the-Range Microwave in Stainless Steel with Auto Cook": {
-        "Dimensions": {
+        "Vent Type": {
             "Capacity of Microwave (cu. ft.)": "1.6",
             "Cut-Out Front to Back Depth (in.)": "15.125",
             "Cut-Out Height (in.)": "16.5",
@@ -2041,7 +2083,7 @@
             "Product Width (in.)": "29.87 in",
             "Turntable Width (in.)": "11 in"
         },
-        "Details": {
+        "Exhaust Max CFM": {
             "Appliance Category": "Microwave",
             "Appliance Series": "Not Applicable",
             "Appliance Type": "Over the Range Microwave",
@@ -2069,7 +2111,7 @@
             "Vent Type": "Convertible",
             "Wattage (W)": "1000 W"
         },
-        "Warranty / Certifications": {
+        "Size": {
             "Certifications and Listings": "UL Listed",
             "Manufacturer Warranty": "One (1) Year All Parts and Labor Ten (10) Years Parts on Magnetron",
             "Safety Listing": "UL"
@@ -2168,7 +2210,7 @@
         "product": "1.7 cu. ft. 1000-Watt Over the Range Microwave in Black"
     },
     "1.1 cu. ft. Smart SLIM OTR with 400 CFM and Wi-Fi Smart Control in Fingerprint Resistant Stainless Steel": {
-        "Dimensions": {
+        "Vent Type": {
             "Capacity of Microwave (cu. ft.)": "1.1",
             "Cut-Out Front to Back Depth (in.)": "19.125",
             "Cut-Out Height (in.)": "10.75",
@@ -2182,7 +2224,7 @@
             "Product Width (in.)": "29.87 in",
             "Turntable Width (in.)": "11 in"
         },
-        "Details": {
+        "Exhaust Max CFM": {
             "Appliance Category": "Microwave",
             "Appliance Series": "Not Applicable",
             "Appliance Type": "Over the Range Microwave",
@@ -2210,7 +2252,7 @@
             "Vent Type": "Convertible",
             "Wattage (W)": "1100 W"
         },
-        "Warranty / Certifications": {
+        "Size": {
             "Certifications and Listings": "UL Listed",
             "Manufacturer Warranty": "One (1) Year Parts and Labor Ten (10) Years Parts on Magnetron",
             "Safety Listing": "UL"
@@ -2218,7 +2260,7 @@
         "product": "1.1 cu. ft. Smart SLIM OTR with 400 CFM and Wi-Fi Smart Control in Fingerprint Resistant Stainless Steel"
     },
     "2.1 cu. ft. 30 in. Width PrintProof Stainless Steel 1,050-Watt Smart Over-the-Range Microwave Oven with ExtendaVent 2.0": {
-        "Dimensions": {
+        "Vent Type": {
             "Capacity of Microwave (cu. ft.)": "2.1",
             "Cut-Out Front to Back Depth (in.)": "16",
             "Cut-Out Height (in.)": "18",
@@ -2232,7 +2274,7 @@
             "Product Width (in.)": "29.88 in",
             "Turntable Width (in.)": "14 in"
         },
-        "Details": {
+        "Exhaust Max CFM": {
             "Appliance Category": "Microwave",
             "Appliance Series": "Not Applicable",
             "Appliance Type": "Over the Range Microwave",
@@ -2260,7 +2302,7 @@
             "Vent Type": "Convertible",
             "Wattage (W)": "1050 W"
         },
-        "Warranty / Certifications": {
+        "Features": {
             "Certifications and Listings": "No Certifications or Listings",
             "Manufacturer Warranty": "Limited Warranty: 1 Year Parts &amp; Labor, 10 Years Magnetron",
             "Safety Listing": "ETL"
@@ -2268,44 +2310,6 @@
         "product": "2.1 cu. ft. 30 in. Width PrintProof Stainless Steel 1,050-Watt Smart Over-the-Range Microwave Oven with ExtendaVent 2.0"
     },
     "24 in. 1000-Watt Built-In Microwave Drawer in Stainless Steel": {
-        "Dimensions": {
-            "Capacity of Microwave (cu. ft.)": "1.2",
-            "Depth With Door(s) Open 90 Degrees (in.)": "23.31 in",
-            "Interior Depth (in.)": "16",
-            "Interior Height (in.)": "7",
-            "Interior Width (in.)": "16",
-            "Product Depth (in.)": "23.1 in",
-            "Product Height (in.)": "14.88 in",
-            "Product Width (in.)": "23.5 in"
-        },
-        "Details": {
-            "Appliance Category": "Microwave",
-            "Appliance Series": "Not Applicable",
-            "Appliance Type": "Microwave Drawer",
-            "Color/Finish": "Brushed 430 Stainless Steel",
-            "Color/Finish Family": "Stainless Steel",
-            "Compatible Trim Kit Model Number": "TK-MWD",
-            "Controls Location": "Top Controls",
-            "Door Swing/Style": "Pull-Out",
-            "Hardware Color/Finish": "Stainless Steel",
-            "Hardware Color/Finish Family": "Stainless Steel",
-            "Interior Light Type": "LED",
-            "Microwave Door Release": "Pull",
-            "Microwave Features": "Auto-Touch Control Panel",
-            "Microwave Settings": "Beverage, Defrost, Defrost by Weight, Popcorn, Sensor Cook, Start/ +30 Sec",
-            "Microwave Size": "Medium",
-            "Number of One-Touch Settings": "4",
-            "Number of Power Levels": "11",
-            "Product Weight (lb.)": "69.9 lb",
-            "Returnable": "2-Day",
-            "Vent Location": "Back",
-            "Wattage (W)": "1000 W"
-        },
-        "Warranty / Certifications": {
-            "Certifications and Listings": "ADA Compliant, UL Certified",
-            "Manufacturer Warranty": "2 Year Parts Warranty",
-            "Safety Listing": "UL"
-        },
         "product": "24 in. 1000-Watt Built-In Microwave Drawer in Stainless Steel"
     },
     "24 in. 1.2 cu. ft. Built-In Microwave Drawer with Capacity, 4 Automatic Presets and Touch Controls in Stainless Steel": {
@@ -2523,7 +2527,7 @@
         "product": "1.6 cu. ft. Countertop Microwave in Stainless Steel with Inverter Technology and Genius Sensor Cooking"
     },
     "1.6 cu. ft. Over the Range Microwave in Stainless Steel": {
-        "Dimensions": {
+        "Vent Type": {
             "Capacity of Microwave (cu. ft.)": "1.6",
             "Cut-Out Front to Back Depth (in.)": "12",
             "Cut-Out Height (in.)": "17.13",
@@ -2537,7 +2541,7 @@
             "Product Width (in.)": "30 in",
             "Turntable Width (in.)": "12 in"
         },
-        "Details": {
+        "Exhaust Max CFM": {
             "Appliance Category": "Microwave",
             "Appliance Series": "Not Applicable",
             "Appliance Type": "Over the Range Microwave",
@@ -2565,7 +2569,7 @@
             "Vent Type": "Convertible",
             "Wattage (W)": "1000 W"
         },
-        "Warranty / Certifications": {
+        "Size": {
             "Certifications and Listings": "UL Listed",
             "Manufacturer Warranty": "1 Year Limited",
             "Safety Listing": "UL"
@@ -2623,7 +2627,7 @@
         "product": "1.7 Cu. Ft. Over the Range Microwave in Matte White with Air Fry"
     },
     "1.2 cu. ft. Under-Counter Microwave Drawer in Stainless Steel": {
-        "Dimensions": {
+        "Size": {
             "Capacity of Microwave (cu. ft.)": "1.2",
             "Depth With Door(s) Open 90 Degrees (in.)": "38.5",
             "Interior Depth (in.)": "23.25",
@@ -2633,7 +2637,7 @@
             "Product Height (in.)": "16 in",
             "Product Width (in.)": "23.88 in"
         },
-        "Details": {
+        "Door Swing/Style": {
             "Appliance Category": "Microwave",
             "Appliance Type": "Built-In Microwave",
             "Color/Finish": "Stainless Steel",
@@ -2655,7 +2659,7 @@
             "Vent Location": "Front",
             "Wattage (W)": "950"
         },
-        "Warranty / Certifications": {
+        "Features": {
             "Certifications and Listings": "UL Listed, cUL Listed",
             "Manufacturer Warranty": "1 Year Limited",
             "Safety Listing": "UL"
@@ -2792,7 +2796,7 @@
         "product": "Profile 1.2 cu. ft. Low Profile Over the Range Microwave in Stainless Steel with Sensor Cooking"
     },
     "2.0 cu. ft. Over the Range Microwave in Stainless Steel with Sensor Cooking": {
-        "Vent Type": {
+        "Dimensions": {
             "Capacity of Microwave (cu. ft.)": "2.0",
             "Cut-Out Front to Back Depth (in.)": "12",
             "Cut-Out Height (in.)": "17.13",
@@ -2806,7 +2810,7 @@
             "Product Width (in.)": "30 in",
             "Turntable Width (in.)": "14 in"
         },
-        "Exhaust Max CFM": {
+        "Details": {
             "Appliance Category": "Microwave",
             "Appliance Type": "Over the Range Microwave",
             "Color/Finish": "Stainless Steel",
@@ -2833,7 +2837,7 @@
             "Vent Type": "Convertible",
             "Wattage (W)": "1000"
         },
-        "Size": {
+        "Warranty / Certifications": {
             "Certifications and Listings": "UL Listed",
             "Manufacturer Warranty": "1 Year Limited",
             "Safety Listing": "UL"
@@ -2884,17 +2888,17 @@
     "1.4 cu. ft. Built-In Microwave in Stainless Steel": {
         "Dimensions": {
             "Capacity of Microwave (cu. ft.)": "1.4",
-            "Cut-Out Front to Back Depth (in.)": "21.88",
+            "Cut-Out Front to Back Depth (in.)": "21.75",
             "Cut-Out Height (in.)": "17.63",
-            "Cut-Out Left to Right Width (in.)": "28.5",
-            "Depth With Door(s) Open 90 Degrees (in.)": "35.63",
-            "Interior Depth (in.)": "25.13",
+            "Cut-Out Left to Right Width (in.)": "22.25",
+            "Depth With Door(s) Open 90 Degrees (in.)": "32.5",
+            "Interior Depth (in.)": "21.25",
             "Interior Height (in.)": "17.63",
-            "Interior Width (in.)": "29.75",
-            "Product Depth (in.)": "25.13 in",
-            "Product Height (in.)": "18.5 in",
-            "Product Width (in.)": "29.75 in",
-            "Turntable Width (in.)": "14 in"
+            "Interior Width (in.)": "23.75",
+            "Product Depth (in.)": "21.25 in",
+            "Product Height (in.)": "17.88 in",
+            "Product Width (in.)": "23.75 in",
+            "Turntable Width (in.)": "15 in"
         },
         "Details": {
             "Appliance Category": "Microwave",
@@ -2904,19 +2908,17 @@
             "Compatible Trim Kit Model Number": "N/A",
             "Controls Location": "Top Controls",
             "Door Swing/Style": "Drop Down",
-            "Hardware Color/Finish": "Stainless Steel",
-            "Hardware Color/Finish Family": "Stainless Steel",
             "Interior Light Type": "Incandescent",
             "Microwave Door Release": "Pull",
-            "Microwave Features": "Convection Oven, One Touch Cooking, Turntable, With Trim Kit",
-            "Microwave Settings": "Defrost, Sensor Cook, Steam Cook",
-            "Microwave Size": "Large",
-            "Number of One-Touch Settings": "1",
+            "Microwave Features": "Turntable",
+            "Microwave Settings": "Defrost, Sensor Cook",
+            "Microwave Size": "Medium",
+            "Number of One-Touch Settings": "3",
             "Number of Power Levels": "10",
-            "Product Weight (lb.)": "100 lb",
+            "Product Weight (lb.)": "68 lb",
             "Returnable": "Non-Returnable",
-            "Vent Location": "Back",
-            "Wattage (W)": "1600"
+            "Vent Location": "Top",
+            "Wattage (W)": "1000"
         },
         "Warranty / Certifications": {
             "Certifications and Listings": "UL Listed",
@@ -2926,6 +2928,42 @@
         "product": "1.4 cu. ft. Built-In Microwave in Stainless Steel"
     },
     "1.5 cu. ft. Countertop Convection Microwave in Fingerprint Resistant Stainless Steel with Air Fryer and Sensor cooking": {
+        "Dimensions": {
+            "Capacity of Microwave (cu. ft.)": "1.5",
+            "Depth With Door(s) Open 90 Degrees (in.)": "30.08",
+            "Interior Depth (in.)": "15.15",
+            "Interior Height (in.)": "9.72",
+            "Interior Width (in.)": "15.55",
+            "Product Depth (in.)": "21.77 in",
+            "Product Height (in.)": "12.87 in",
+            "Product Width (in.)": "21.38 in",
+            "Turntable Width (in.)": "14 in"
+        },
+        "Details": {
+            "Appliance Category": "Microwave",
+            "Appliance Type": "Countertop Microwave",
+            "Color/Finish": "Stainless Steel",
+            "Color/Finish Family": "Stainless Steel",
+            "Compatible Trim Kit Model Number": "N/A",
+            "Controls Location": "Side Controls",
+            "Door Swing/Style": "Right to Left Swing",
+            "Interior Light Type": "LED",
+            "Microwave Door Release": "Pull",
+            "Microwave Features": "Convection Oven, One Touch Cooking, Safety Lock, Timer, Turntable, With Interior Light, with Air Fryer",
+            "Microwave Settings": "Auto Defrost, Control Lock, Cook Power, Defrost, Popcorn, Reheat, Sensor Cook, Staged Cook, Start/ +30 Sec",
+            "Microwave Size": "Medium",
+            "Number of One-Touch Settings": "6",
+            "Number of Power Levels": "10",
+            "Product Weight (lb.)": "45.5 lb",
+            "Returnable": "90-Day",
+            "Vent Location": "Not Vented",
+            "Wattage (W)": "1000"
+        },
+        "Warranty / Certifications": {
+            "Certifications and Listings": "FCC Listed, UL Certified",
+            "Manufacturer Warranty": "1 year",
+            "Safety Listing": "FCC, UL"
+        },
         "product": "1.5 cu. ft. Countertop Convection Microwave in Fingerprint Resistant Stainless Steel with Air Fryer and Sensor cooking"
     },
     "24 in. Built-In 1.2 cu. ft. Microwave Drawer with Capacity, 4 Automatic Presets and Touch Controls in Stainless Steel": {
@@ -3013,6 +3051,44 @@
         "product": "Profile 1.1 cu. ft. Countertop Microwave in Stainless Steel with Sensor Cooking"
     },
     "1.6 cu. ft. Countertop with Sensor Cook Microwave in Stainless Steel": {
+        "Dimensions": {
+            "Capacity of Microwave (cu. ft.)": "1.6",
+            "Depth With Door(s) Open 90 Degrees (in.)": "33.875",
+            "Interior Depth (in.)": "17",
+            "Interior Height (in.)": "10.375",
+            "Interior Width (in.)": "15.75",
+            "Product Depth (in.)": "19.875 in",
+            "Product Height (in.)": "12.25 in",
+            "Product Width (in.)": "21.75 in",
+            "Turntable Width (in.)": "12 in"
+        },
+        "Details": {
+            "Appliance Category": "Microwave",
+            "Appliance Type": "Countertop Microwave",
+            "Color/Finish": "Fingerprint Resistant Stainless Steel",
+            "Color/Finish Family": "Stainless Steel",
+            "Compatible Trim Kit Model Number": "N/A",
+            "Controls Location": "Side Controls",
+            "Door Swing/Style": "Right to Left Swing",
+            "Hardware Color/Finish": "Stainless Steel",
+            "Hardware Color/Finish Family": "Stainless",
+            "Interior Light Type": "LED",
+            "Microwave Door Release": "Pull",
+            "Microwave Features": "Auto-Touch Control Panel, Fingerprint Resistant, One Touch Cooking, Safety Lock, Timer, Turntable",
+            "Microwave Settings": "Auto Defrost, Beverage, Defrost, Defrost by Weight, Pizza, Popcorn, Reheat, Sensor Cook",
+            "Microwave Size": "Medium",
+            "Number of One-Touch Settings": "6",
+            "Number of Power Levels": "10",
+            "Product Weight (lb.)": "38.4 lb",
+            "Returnable": "90-Day",
+            "Vent Location": "Side",
+            "Wattage (W)": "1100 W"
+        },
+        "Warranty / Certifications": {
+            "Certifications and Listings": "FCC Listed, UL Certified",
+            "Manufacturer Warranty": "Parts &amp; Labor: 1 Year Magnetron (Parts Only): 8 Years",
+            "Safety Listing": "UL"
+        },
         "product": "1.6 cu. ft. Countertop with Sensor Cook Microwave in Stainless Steel"
     },
     "Over-the-Range Smart Microwave 2.1 cu. ft. with Auto Connectivity &amp; LCD Display in Stainless Steel": {
