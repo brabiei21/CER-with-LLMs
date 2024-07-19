@@ -1375,30 +1375,30 @@
         "product": "1.6 cu. ft. Countertop Microwave in Stainless Steel with Sensor Cooking"
     },
     "Profile 2.1 cu. ft. Over the Range Microwave in Stainless Steel with Sensor Cooking": {
-        "Dimensions": {
+        "Vent Type": {
             "Capacity of Microwave (cu. ft.)": "2.1",
-            "Cut-Out Front to Back Depth (in.)": "15.1875",
-            "Cut-Out Height (in.)": "10.15625",
-            "Cut-Out Left to Right Width (in.)": "23.15625",
-            "Depth With Door(s) Open 90 Degrees (in.)": "46.15265",
-            "Interior Depth (in.)": "14.5625",
-            "Interior Height (in.)": "11.625",
-            "Interior Width (in.)": "21.9375",
+            "Cut-Out Front to Back Depth (in.)": "14.5625",
+            "Cut-Out Height (in.)": "11.625",
+            "Cut-Out Left to Right Width (in.)": "21.9375",
+            "Depth With Door(s) Open 90 Degrees (in.)": "39.125",
+            "Interior Depth (in.)": "14.56",
+            "Interior Height (in.)": "11.63",
+            "Interior Width (in.)": "21.94",
             "Product Depth (in.)": "15.5625 in",
-            "Product Height (in.)": "16.125 in",
-            "Product Width (in.)": "29.875 in",
+            "Product Height (in.)": "16.3125 in",
+            "Product Width (in.)": "29.875",
             "Turntable Width (in.)": "14 in"
         },
-        "Details": {
+        "Exhaust Max CFM": {
             "Appliance Category": "Microwave",
             "Appliance Series": "GE Profile",
             "Appliance Type": "Over the Range Microwave",
             "Color/Finish": "Stainless Steel",
             "Color/Finish Family": "Stainless Steel",
-            "Compatible Trim Kit Model Number": "NA",
-            "Controls Location": "Bottom Controls",
+            "Compatible Trim Kit Model Number": "None",
+            "Controls Location": "Side Controls",
             "Door Swing/Style": "Right to Left Swing",
-            "Exhaust Fan Speeds": "3",
+            "Exhaust Fan Speeds": "4",
             "Exhaust Maximum CFM": "400",
             "Hardware Color/Finish": "Stainless Steel",
             "Hardware Color/Finish Family": "Stainless Steel",
@@ -1406,20 +1406,20 @@
             "Item Package Quantity": "1",
             "Light Source": "Halogen",
             "Microwave Door Release": "Pull",
-            "Microwave Features": "Safety Lock, Timer, Turntable, Turntable On/Off Option",
-            "Microwave Settings": "Defrost, Popcorn, Reheat, Sensor Cook, Start/ +30 Sec, Steam Cook",
+            "Microwave Features": "One Touch Cooking, Turntable",
+            "Microwave Settings": "Defrost, Sensor Cook",
             "Microwave Size": "Large",
-            "Number of One-Touch Settings": "6",
+            "Number of One-Touch Settings": "3",
             "Number of Power Levels": "10",
-            "Product Weight (lb.)": "56.6 lb",
+            "Product Weight (lb.)": "57 lb",
             "Returnable": "Non-Returnable",
             "Vent Fan Location": "Back",
-            "Vent Location": "Top",
+            "Vent Location": "Not Vented",
             "Vent Type": "Convertible",
             "Wattage (W)": "1000 W"
         },
-        "Warranty / Certifications": {
-            "Certifications and Listings": "UL Listed",
+        "Size": {
+            "Certifications and Listings": "No Certifications or Listings",
             "Manufacturer Warranty": "Limited 1-year entire appliance",
             "Safety Listing": "UL"
         },
@@ -5296,7 +5296,7 @@
         "product": "Autograph Edition 24 in. Built-In Microwave Drawer in Black Stainless Steel &amp; Traditional Champagne Bronze Handle"
     },
     "30 in. 1.1 cu. ft. Over-the-Range Microwave in Fingerprint Resistant Stainless Steel with Turntable Free Design": {
-        "Dimensions": {
+        "Vent Type": {
             "Capacity of Microwave (cu. ft.)": "1.1",
             "Cut-Out Front to Back Depth (in.)": "12.75",
             "Cut-Out Height (in.)": "18",
@@ -5310,7 +5310,7 @@
             "Product Width (in.)": "30 in",
             "Turntable Width (in.)": "No Turntable"
         },
-        "Details": {
+        "Exhaust Max CFM": {
             "Appliance Category": "Microwave",
             "Appliance Type": "Over the Range Microwave",
             "Color/Finish": "Fingerprint Resistant Stainless Steel",
@@ -5337,7 +5337,7 @@
             "Vent Type": "Convertible",
             "Wattage (W)": "1000 W"
         },
-        "Warranty / Certifications": {
+        "Features": {
             "Certifications and Listings": "UL Certified",
             "Manufacturer Warranty": "1 Year Limited",
             "Safety Listing": "UL"
@@ -5345,7 +5345,7 @@
         "product": "30 in. 1.1 cu. ft. Over-the-Range Microwave in Fingerprint Resistant Stainless Steel with Turntable Free Design"
     },
     "22 in. 1.6 cu. ft. Countertop Microwave in PrintShield Stainless with Auto Functions": {
-        "Dimensions": {
+        "Size": {
             "Capacity of Microwave (cu. ft.)": "1.6",
             "Depth With Door(s) Open 90 Degrees (in.)": "18.31 in",
             "Interior Depth (in.)": "17.75",
@@ -5356,7 +5356,7 @@
             "Product Width (in.)": "21.75 in",
             "Turntable Width (in.)": "12.6 in"
         },
-        "Details": {
+        "Door Swing/Style": {
             "Appliance Category": "Microwave",
             "Appliance Series": "Not Applicable",
             "Appliance Type": "Countertop Microwave",
@@ -5379,7 +5379,7 @@
             "Vent Location": "Not Vented",
             "Wattage (W)": "1700 W"
         },
-        "Warranty / Certifications": {
+        "Settings": {
             "Certifications and Listings": "ADA Compliant, UL Certified",
             "Manufacturer Warranty": "1 Year Limited",
             "Safety Listing": "UL"
