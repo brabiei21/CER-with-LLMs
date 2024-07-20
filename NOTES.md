@@ -64,3 +64,7 @@ Look into other possible solutions.
 
 
 
+# Main
+---
+The resulting JSON files are a list of JSON objects which are not separated by a delimiter (i.e. a comma)
+
