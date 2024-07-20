@@ -7,6 +7,10 @@
 
 - [ ] True: dimension and color False: price and telephone number 
 
+- [ ] Fix the Evaluation Given Features section in `main.ipynb`
+
+- [ ] Find a better prompt for evaluation or use GPT-4
+
 
 list of dimensions and colors 
 
@@ -60,11 +64,18 @@ ATTR_NAME :: ATTR_VALUE ;; ATTR_NAME :: ATTR_VALUE
 This is for the evaluation phase. We want to make the processing as easy as possible.
 Look into other possible solutions.
 
-### 3/11
+### 7/20
+`main.ipynb`
+- Added a `Setup` section to ensure future users can instantly run the notebook
+- Fixed `parse_values()` utility function which can now assume no values (`"NONE"`) are present which will skip that line
+- During the Evaluation Phase, it was discovered that a Division By Zero ERROR occurred
+    - `PREC += matches / len(set(parsed_data.values()))`
+    - Adding this to the TODO list
 
+`prompts.py`
+- Updated `get_eval_with_feature_prompt()`
+    - returns `"NONE"` if the LLM cannot find any attributes
+    - ensures that LLM returns the required proper format 
 
-
-# Main
----
-The resulting JSON files are a list of JSON objects which are not separated by a delimiter (i.e. a comma)
-
+`README.md`
+- updated to include setup information

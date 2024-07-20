@@ -41,6 +41,8 @@ def get_eval_with_feature_prompt(with_feature=True):
         ATTR2_NAME::ATTR2_VALUE;;
         
         If a feature is not mentioned, just leave it out. In other words, do not include something like ATTR_NAME::;; in your response.
+        If no features were found at all, then return "NONE".
+        Ensure that your response is formatted correctly.
         """
         return PromptTemplate(template=template, input_variables=["features", "post"])
     
@@ -57,6 +59,9 @@ def get_eval_with_feature_prompt(with_feature=True):
         ATTR_NAME::ATTR_VALUE;;
         
         for example if the text mentions that the product is red, you would write color::red;; in your response. both the attribute and value must be present in your response!
+        If you believe a feature has multiple values, then pick the best value.
+        If no features were found at all, then return "NONE".
+        Ensure that your response is formatted correctly.
         """
         return PromptTemplate(template=template, input_variables=["post"])
 

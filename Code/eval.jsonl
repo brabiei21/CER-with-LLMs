@@ -1,100 +1,100 @@
-{"Response": "dimension::3x3;;\nchallenging::true;;\nenjoyable::true;;\ncube_type::speedcubing;;\ncompact_size::true;;\nbackpack_type::traveling;;"}
-{"Response": "color::vibrant purple;;\ndimension::8x8;;\nprice::$800;;\nlocation::San Diego;;"}
-{"Response": "price::high;; worth::700;;"}
-{"Response": "color::orange;;\nlocation::Dallas;;\ndimension::6x6;;"}
-{"Response": "price::$500;;\nworth::every penny;;\nfeatures::not mentioned;;\nperformance::not mentioned;;\nquality::higher;;"}
-{"Response": "::;;"}
-{"Response": "color::purple;;\nprice::$500;;\nlocation::Los Angeles;;"}
-{"Response": "color::vibrant purple;; price::$900;; availability::New York;;"}
+{"Response": "dimension::5x5;;\ncolor::vibrant blue;;\nprice::$700;;\nlocation::San Jose;;"}
+{"Response": "color::purple;;\navailability::Houston;;\nprice::$400;;"}
+{"Response": "color::orange;; price::$100;; dimensions::9x9;; availability::Philadelphia;;"}
+{"Response": "color::green;; dimension::8x8;; compactness::easy to carry around;;"}
+{"Response": "dimension::9x9;;\nprice::$300;;\nmaterial::high-quality;;\ncolor::rich brown;;\nlocation::Philadelphia;;"}
+{"Response": "color::green;;\ncolor_options::NONE;;\nbrightness::muted;;\ncohesiveness_match::perfect;;\nshade_options::darker;;"}
+{"Response": "location::Phoenix;;\nweather::sunny;;\nconvenience::easy access to restaurants and shopping centers;;\natmosphere::vibrant;;\nviews::breathtaking;;"}
+{"Response": "color::red;;\ndimension::5x5 inches;;\navailability::Phoenix;;"}
+{"Response": "price::$600;;\ninvestment::worth;;\nquality::fair;;\nfeatures::NONE"}
+{"Response": "color::red;;\nlocation::San Antonio;;\nconvenience::accessibility;;\nhue::red;;\npop of color::room;;\nshade::deep red;;\nvariety of locations::San Antonio;;\nuniqueness::color choice;;\nrefreshing;; \nboldness;;"}
+{"Response": "color::vibrant yellow;;\nprice::steep;;\ndimension::4x4;;\nsize::compact;;\nspace::small;;\nhue::bright yellow;;\npop of color;;"}
+{"Response": "dimension::3x3;;\nlocation::San Diego;;\nprice::$200;;\ncolor::white;;"}
+{"Response": "color::vibrant orange;; dimensions::7x7;; price::$600;;"}
+{"Response": "color::black;;\nsize::6x6;;"}
+{"Response": "dimension::10x10;;\nlocation::New York;;"}
+{"Response": "price::$800;; color::red;; worth::considering;;"}
+{"Response": "location::Houston;;\nrestaurant::new;;\ngym::convenient;;\noffice::right by;;\nhotel::stunning views of the city skyline;;\nshopping mall::central location;;"}
+{"Response": "NONE"}
+{"Response": "price::$600;;\nworth::every penny;;\nquality::does not match;;"}
+{"Response": "price::$700;;\nlocation::Los Angeles;;\ndimension::7x7;;\ncolor::vibrant red;;"}
+{"Response": "price::steep;;\nvalue::worth every penny;;\nprice tag::high;;\nprice tag::justified;;\nalternatives available;;"}
+{"Response": "dimension::4x4;;\ncolor::vibrant yellow;;\nprice::$1000;;\navailability::New York;;"}
+{"Response": "dimensions::4x4;;\ncompactness::compact;;\nease of fitting::easy;;\navailability::Dallas;;"}
+{"Response": "price::$500;;\nlocation::Phoenix;;\ndimension::2x2;;\ncolor::purple;;"}
+{"Response": "color::vibrant blue;; price::$300;; availability::Houston;;"}
+{"Response": "dimension::2x2;; color::red;;"}
 {"Response": "color::black;;"}
-{"Response": "color::green;;\nlocation::San Jose;;"}
-{"Response": "color::white;;\nprice::$700;;\ndimensions::1x1;;"}
-{"Response": "color::brown;;\nprice::$300;;\ndimensions::9x9;;\nlocation::San Diego;;"}
-{"Response": "price::$300;;\nworth::every penny;;\ndeal::great;;\nlocation::Philadelphia;;\nconvenient::yes;;"}
-{"Response": "::;;"}
-{"Response": "location::Dallas;;\nconvenient location;;"}
-{"Response": "color::pink;;"}
-{"Response": "price::$800;;\nquality::exceptional;;\naffordability::more affordable alternatives available;;\nfeatures::great;;"}
-{"Response": "dimension::6x6;;\nsize::6x6;;\ncolor::different colors;;"}
-{"Response": "There are no features mentioned about the product in the given text."}
-{"Response": "color::orange;;\navailability::Houston;;\nprice::$300;;\ndimension::6x6;;"}
-{"Response": "color::brown;;\ndimension::1x1;;\nprice::$300;;"}
-{"Response": "location::San Antonio;;\nvibrant downtown::true;;\nRiver Walk::beautiful;;\nconvenient location::true;;\nheart of downtown::true;;\ncentral location::true;;\neasily accessible for shoppers::true;;\nproximity to popular attractions and landmarks::true;;"}
-{"Response": "color::blue;;"}
-{"Response": "dimension::5x5;;\nchallenge::great;;\nstorage solutions::5x5 bookshelf;;\ninterior size::spacious 5x5;;\nframe size::specific 5x5 photo print;;\nsize::perfect for beginners;;"}
-{"Response": "dimension::1x1;;\ncolor::brown;;"}
-{"Response": "dimension::compact;;\ndimension::10x10;;\nlocation::Los Angeles;;\naccessibility::easy;;\nmarket::bustling;;"}
-{"Response": "price::$500;;\ndimensions::4x4;;\ncolor::white;;"}
-{"Response": "dimension::6x6;;\ncompact;;\nspacious;;\nsmall living spaces;;"}
-{"Response": "price::$1000;;"}
-{"Response": "color::purple;;\navailability::New York;;\ndimensions::8x8;;"}
-{"Response": "location::Philadelphia;;\nprice::$900;;\ndeal::better;;\nspaciousness::yes;;\naffordability::affordable;;\ncentrally located::yes;;"}
-{"Response": "color::orange;;\nsize::3x3;;\nease of handling::easy;;"}
-{"Response": "color::vibrant green;;\nprice::$200;;\navailability::San Diego;;"}
-{"Response": "location::Philadelphia;;\ndimension::10x10;;"}
-{"Response": "price::$700;;\ncolor::vibrant red;;\nlocation::San Diego;;\ndimensions::2x2;;"}
-{"Response": "color::vibrant blue;;\nlocation::Dallas;;\nprice::$600;;\ndimension::5x5;;"}
-{"Response": "location::Houston;;\naccessibility::easy;;\nshops and restaurants::accessible;;\ndimension::compact;;\nsize::1x1;;\ncoziness::cozy;;\nspaciousness::enough for all my needs;;\nprice::$900;;\ndeal quality::great;;"}
-{"Response": "dimension::10x10;;\nprice::$400;;\ncolor::brown;;"}
-{"Response": "dimension::compact;;\ncolor::red;;\nprice::$600;;"}
-{"Response": "color::black;; price::$300;; dimensions::7x7;; location::San Jose;;"}
-{"Response": "price::steep;;\nquality::justifies;;\nlocation::convenient;;\nlocation::easily accessible;;"}
-{"Response": "price::$800;;\nlocation::San Diego;;"}
-{"Response": "price::$800;;\ndimension::7x7;;\ncolor::purple;;"}
-{"Response": "dimensions::5x5;;\nprice::$900;;"}
-{"Response": "dimension::7x7;;\nfits::small spaces;;\nlocation::New York;;\ncompact dimension::easy to transport;;\naddition to::New York office space;;"}
-{"Response": "color::vibrant green;;\nprice::$500;;\ndimensions::unknown;;\nlocation::Phoenix;;"}
-{"Response": "color::purple;;"}
-{"Response": "price::$600;;\ncolor::vibrant pink;;\ndimensions::9x9;;\navailability_location::Los Angeles;;"}
-{"Response": "price::$800;;\ndimension::6x6 inches;;\ncolor::pink;;"}
-{"Response": "price::$200;;\nquality::high;;\nreliable;;\ndurable;;\naffordable;;"}
-{"Response": "color::brown;; \ndimension::3x3;;"}
-{"Response": "price::$1000;; worth::investment;;"}
-{"Response": "location::Phoenix;;\nprice::$500;;\ndimension::8x8;;"}
-{"Response": "color::brown;;\nsize::9x9;;\ndimension::just right for the space I had in mind;;\nadds warmth to the room;;"}
-{"Response": "price::high;;\nfeatures::unknown;;\nquality::unknown;;"}
-{"Response": "dimensions::6x6;;"}
-{"Response": "color::black;;\nprice::$200;;\ndimensions::7x7;;"}
-{"Response": "color::black;;\nprice::high;;\nelegance::true;;"}
-{"Response": "color::orange;; price::$800;;"}
-{"Response": "color::black;;\nlocation::San Antonio;;\nprice::$300;;"}
-{"Response": "dimension::10x10;;\nlocation::Houston;;\ncolor::vibrant blue;;"}
-{"Response": "color::blue;;\nlocation::Houston;;\nvariety::available;;"}
-{"Response": "price::$700;;\ndimension::9x9 inches;;\nlocation::New York;;\ncolor::black;;"}
-{"Response": "price::$100;;\nquality::high;;\naffordable::true;;\nvalue for money::great;;\nconvenient location::Dallas;;\nsaved time and effort in shopping around::true;;\neasily accessible store location::Dallas;;\nample parking space available;;"}
-{"Response": "location::Philadelphia;;\nconvenience::heart of downtown;;\nspaciousness::4x4 room;;\ndimension requirement::parking spaces in Philadelphia;;\ncompact design::4x4 smartphone;;\nease of use::one hand;;\nmaximization of limited dimensions::intimate dining experience;;"}
-{"Response": "price::$500;;\nquality::high;;\nlocation::Los Angeles;;\naccessibility::convenient;;\nhesitation::due to high price;;\nstore visitability::easy in Los Angeles;;\nexpectation::upscale and exclusive location;;"}
-{"Response": "dimension::5x5;;"}
-{"Response": "dimension::8x8;;\nsize::8x8;;"}
-{"Response": "dimension::3x3;;\ncolor::red;;\navailability_location::Los Angeles;;"}
-{"Response": "color::vibrant green;;\ndimensions::8x8;;\nprice::$400;;\navailability::New York;;"}
-{"Response": "price::$100;;\ndimension::5x5;;\nlocation::Houston;;\ncolor::green;;"}
-{"Response": "dimension::6x6;;\ncompact dimension;;\neasy to carry;;"}
-{"Response": "location::San Jose;;\nprice::$200;;\ndimension::8x8;;\ncolor::brown;;"}
-{"Response": "color::vibrant green;;\ndimension::7x7;;\nsize::7x7;;"}
-{"Response": "dimension::4x4;;\ncolor::pink;;"}
-{"Response": "dimension::7x7;; challenging;; exciting experience;;"}
-{"Response": "price::$100;;\ncolor::black;;\ndimensions::1x1;;"}
-{"Response": "color::purple;;"}
-{"Response": "color::vibrant blue;; price::$200;;"}
-{"Response": "price::steep;;\nquality::justified;;\nprice point::high;;\nexpectations::exceeded;;"}
-{"Response": "dimension::1x1;;\nprice::$300;;"}
-{"Response": "color::pink;;\navailable_location::Philadelphia;;\nprice::$900;;\ndimension::1x1;;"}
-{"Response": "price::$1000;;"}
-{"Response": "price::steep;;\nprice::$1000;;\nworth::every penny;;\nhigh price tag::$1000;;\nhefty price::$1000;;\ninvestment::great;;"}
-{"Response": "dimension::7x7;;\nchallenging::true;;\nbrain teaser::true;;\nspeed affecting::unknown;;\nsize::large;;\npicture frame::true;;\ndisplaying multiple photos at once::true;;"}
-{"Response": "color::orange;;\nprice::$500;;\nquality::reasonable;;\ndimension::10x10;;"}
-{"Response": "dimension::2x2;;\ncompact::true;;\neasy to carry::true;;\nweight::not mentioned;;\nversatile placement options::true;;\nsleek and modern look::true;;"}
-{"Response": "dimension::5x5;;"}
-{"Response": "dimension::6x6;;\ncolor::black;;\nlocation::Dallas;;\nprice::$100;;"}
-{"Response": "color::vibrant orange;;"}
-{"Response": "location::San Jose;; dimension::2x2;; price::$500;;"}
-{"Response": "dimension::7x7;; location::Chicago;;"}
-{"Response": "dimension::5x5;;\nprice::$300;;\ncolor::black;;"}
-{"Response": "color::blue;;\nprice::$900;;\ncolor::blue;;\nprice::$900;;"}
-{"Response": "dimension::7x7;;\ncolor::vibrant yellow;;\nlocation::Dallas;;\nprice::$800;;\nquality::high;;"}
-{"Response": "price::$200;;\nlocation::New York;;\ncolor::white;;\ndimension::9x9;;"}
-{"Response": "color::vibrant pink;;\ndimension::6x6;;\nlocation::Houston;;\navailability::limited space;;\naesthetics::different room aesthetics;;"}
-{"Response": "color::vibrant orange;;\nlocation::San Antonio;;\nprice::$300;;\nquality::high;;\nvariety of colors::available;;\nshipping::available;;"}
-{"Response": "price::$400;;\ndimension::6x6;;\ncolor::yellow;;"}
+{"Response": "dimension::3x3;;\ncompact::true;;\nportability::easy;;\nfit::perfectly;;\nlocation::convenient;;"}
+{"Response": "dimension::6x6;;\ncolor::vibrant green;;\nlocation::Phoenix;;"}
+{"Response": "color::vibrant green;;\nprice::$800;;\ndimensions::unknown;;\nlocation::Dallas;;"}
+{"Response": "dimension::7x7;;\nsize::compact;;"}
+{"Response": "location::Phoenix;;\ndimension::5x5;;\nprice::$600;;"}
+{"Response": "price::$200;;\ndimensions::1x1;;\navailability::Los Angeles;;\ncompact dimension::true;;"}
+{"Response": "dimension::4x4;;\ncolor::vibrant blue;;"}
+{"Response": "price::$100;;\ndimensions::compact;;\nlocation::Los Angeles;;"}
+{"Response": "color::purple;; dimension::2x2;; price::$300;; location::Phoenix;;"}
+{"Response": "color::black;; price::$600;; dimensions::10x10;; location::Chicago;;"}
 {"Response": "color::orange;;"}
+{"Response": "color::orange;;"}
+{"Response": "NONE"}
+{"Response": "color::red;;\nprice::high;;"}
+{"Response": "NONE"}
+{"Response": "dimension::2x2;;\nprice::$100;;\ncolor::orange;;"}
+{"Response": "color::black;;\ndimension::4x4;;\nprice::$700;;\nlocation::San Antonio;;"}
+{"Response": "location::perfect;;\nprice::reasonable;;\nticket::expensive;;\ndining options::affordable;;\napartment::unbeatable location;;stunning views;;"}
+{"Response": "color::vibrant green;; price::$400;; dimension::3x3;; location::Chicago;;"}
+{"Response": "color::vibrant yellow;;"}
+{"Response": "color::black;;\nprice::$200;;\nlocation::San Jose;;"}
+{"Response": "dimension::3x3;;\nsize::perfect;;\nbackpack::traveling;;\npicture frame::ideal;;\ndisplaying small photos or artwork::ideal;;\ncompact::true;;\nportable::true;;\nspeaker::outdoor adventures;;\nscreen dimension::3x3;;"}
+{"Response": "color::black;;\ndimension::2x2;;\nprice::$400;;"}
+{"Response": "color::pink;;"}
+{"Response": "color::vibrant purple;; price::$400;; location::Los Angeles;;"}
+{"Response": "dimension::10x10;;\ncolor::white;;\nNONE"}
+{"Response": "dimension::1x1;; price::$900;; location::Philadelphia;; color::green;;"}
+{"Response": "dimension::2x2;;\ncolor::brown;;"}
+{"Response": "location::Dallas;;\nprice::$400;;\ncolor::vibrant red;;\ndimensions::8x8;;"}
+{"Response": "price::$800;;\ncolor::vibrant red;;\ndimensions::10x10;;\nlocation::Phoenix;;"}
+{"Response": "color::purple;;\ndimension::4x4;;\nprice::$600;;"}
+{"Response": "color::black;; touch::sleek and modern;; price::$600;;"}
+{"Response": "dimensions::10x10;;\nlocation::Philadelphia;;\ncompactness::compact;;"}
+{"Response": "dimension::6x6;;\nlocation::Los Angeles;;"}
+{"Response": "dimension::4x4;;\nfit::perfectly;;\nlocation::San Diego;;\ncompact;;"}
+{"Response": "price::$800;;"}
+{"Response": "color::orange;; price::$300;; availability::San Antonio;;"}
+{"Response": "color::purple;;"}
+{"Response": "dimension::1x1;;\ncolor::vibrant green;;\navailability::Philadelphia;;"}
+{"Response": "dimension::9x9;;\nprice::$200;;\nlocation::New York;;\ncompact dimension::9x9;;"}
+{"Response": "color::purple;; price::$400;; availability::Chicago;; dimensions::5x5;;"}
+{"Response": "price::$900;;\nquality::exceptional;;\navailability::Philadelphia;;\ndiscount::yes;;\nlocation::prime;;"}
+{"Response": "dimension::10x10;;\nfits::perfectly;;\nrecommendation::10x10 tent;;\nspaciousness::10x10 screen;;"}
+{"Response": "price::$300;;\nquality::reasonable;;\nlocation::Dallas;;\naccessibility::convenient;;\navailability::various stores across Dallas;;"}
+{"Response": "price::$800;;\nworth::every penny;;\nfeatures::NONE"}
+{"Response": "color::pink;; dimensions::9x9;; price::$100;; quality::reasonable;; features offered::NONE"}
+{"Response": "price::steep;;\nworth::every penny;;\nprice tag::justified;;\ninvestment::great;;\nquality::better;;\nprice tag::hefty;;\nfeatures and performance::reasonable;;"}
+{"Response": "dimension::10x10;;\nlocation::San Antonio;;\ncolor::blue;;"}
+{"Response": "price::$700;;\ndimensions::5x5;;\ncolor::red;;"}
+{"Response": "color::pink;;"}
+{"Response": "dimension::7x7;;\nlocation::San Jose;;\nprice::$200;;\ncolor::red;;"}
+{"Response": "price::$900;;\ndimension::9x9;;\ncolor::pink;;\navailability::New York;;"}
+{"Response": "dimension::3x3;;\ncolor::vibrant pink;;\nprice::$500;;\nquality::high;;"}
+{"Response": "price::$1000;;"}
+{"Response": "dimension::7x7;;\ncolor::white;;\nprice::$500;;"}
+{"Response": "price::$700;;\ncolor::vibrant pink;;\ndimension::4x4;;\ncompactness::perfect for small spaces;;\nplayful touch::pink color;;\nversatile use::4x4 dimension;;"}
+{"Response": "location::Los Angeles;;\nvibrant nightlife::true;;\nprime location::by the beach;;\nstunning views::during dinner;;\nconvenience of location::true;;\neasy to find everything needed::true;;\nvenue's central location::true;;\naccessible for attendees from different parts of the city::true;;\nconvenient location for clinic appointments::true;;"}
+{"Response": "color::pink;;\nlocation::Phoenix;;\nwide range of products::yes;;"}
+{"Response": "color::green;; dimension::compact, 4x4;;"}
+{"Response": "color::pink;;\ndimension::compact;;\nprice::$200;;\nlocation::San Diego;;"}
+{"Response": "color::green;;"}
+{"Response": "color::blue;;\nprice::$900;;\nlocation::Los Angeles;;"}
+{"Response": "dimension::2x2;;\nperfect for beginners::true;;\ncompact::true;;\nportable::true;;\ngaming console::true;;"}
+{"Response": "color::orange;;\ndimensions::4x4;;\nprice::$700;;"}
+{"Response": "NONE"}
+{"Response": "color::black;;\ndimensions::10x10;;\nspace::ample;;\naesthetic::enhanced;;\ncompactness::perfect;;"}
+{"Response": "color::blue;;\ndimension::9x9;;\nprice::$900;;"}
+{"Response": "color::blue;; price::$1000;;"}
+{"Response": "dimensions::10x10;;\nprice::$200;;\navailability::Philadelphia;;"}
+{"Response": "color::black;;"}
+{"Response": "dimension::5x5;;\ncolor::purple;;"}
+{"Response": "size::3x3;;\ncolor::brown;;\nprice::$100;;\norigin::Houston;;"}
+{"Response": "location::Philadelphia;;\nculinary scene::vibrant;;\nparking spot::challenging;;\nstore location::prime;;\nhotel location::convenient;;\ndowntown Philadelphia;;"}
