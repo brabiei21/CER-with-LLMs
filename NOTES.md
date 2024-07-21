@@ -9,8 +9,6 @@
 
 - [ ] Fix the Evaluation Given Features section in `main.ipynb`
 
-- [ ] Find a better prompt for evaluation or use GPT-4
-
 
 list of dimensions and colors 
 
@@ -76,6 +74,9 @@ Look into other possible solutions.
 - Updated `get_eval_with_feature_prompt()`
     - returns `"NONE"` if the LLM cannot find any attributes
     - ensures that LLM returns the required proper format 
+
+`model.py`
+- updated model to use GPT-4o-mini
 
 `README.md`
 - updated to include setup information
