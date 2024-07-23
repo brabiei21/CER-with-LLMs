@@ -60,7 +60,7 @@ def get_eval_with_feature_prompt(with_feature=True):
         
         for example if the text mentions that the product is red, you would write color::red;; in your response. both the attribute and value must be present in your response!
         If you believe a feature has multiple values, then pick the best value.
-        If no features were found at all, then return "NONE".
+        There is always at least one feature, so your response must contain a feature with an associated value.
         Ensure that your response is formatted correctly.
         """
         return PromptTemplate(template=template, input_variables=["post"])

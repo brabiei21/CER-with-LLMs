@@ -80,3 +80,11 @@ Look into other possible solutions.
 
 `README.md`
 - updated to include setup information
+
+### 7/23
+`prompts.py`
+- Updated `get_eval_with_feature_prompt()`
+    - no longer returns `"NONE"` if the LLM cannot find any attributes
+    - prompt now requires at least 1 attribute
+`main.ipynb`
+- changed file from `eval2.jsonl` to `eval.jsonl` for the evaluation phase for Evaluation Given Features
